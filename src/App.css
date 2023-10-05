@@ -35,9 +35,9 @@
  margin-right: 100px;
  
 }
-.slider{
+/* .slider{
   justify-content: space-between;
-}
+} */
 .space{
   margin-left: 0.629rem;
   
@@ -47,34 +47,128 @@
     text-decoration: none;
     /* font-size: .8125rem; */
     /* font-weight: 300; */
-    padding: 0.25rem;
+    padding: 0.1rem;
     position: relative;
+    align-items: center;
+    justify-content: center;
     overflow: visible;
     outline: 0;
 }
-.footer {
+.slider{
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+    border-radius: .125rem;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    overflow: hidden;
+    flex-grow: 2;
+    flex-shrink: 1;
+    flex-basis: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    
+}
+.img-slider{
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: .3125rem;
+}
+.img-slider1{
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+  display: block;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+  border-radius: .125rem;
+  overflow: hidden;
+  flex: 1 1 50%;
+  background-position: bottom;
+  flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    margin-left: .3125rem;
+}
+.img-slider2{
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+  display: block;
+  background-position: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+  border-radius: .125rem;
+  overflow: hidden;
+  flex: 1 1 50%;
+  background-position: bottom;
+  flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    margin-left: .3125rem;
+}
+
+
+
+.linktab{
+  box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  width: 1200px;
+  margin: 10px auto 0;
+  min-height: 108px;
+}
+.linktabdiv2{
+  margin: 18px auto 8px;
+  width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.linktabdiv3{
+  position: relative;
+  height: 100%;
+  border-radius: 0;
   
 }
-
-.footer a {
-  flex-basis: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
+.linktabdiv5{
+  /* display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; */
+    font-size: .8125rem;
+    line-height: .875rem;
+    max-width: 150px;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+    overflow: hidden;
+    white-space: pre-line;
+    color: #222;
+    letter-spacing: 0;
+    text-align: center;
 }
 
-.footer img {
-  max-width: 100%;
-  height: auto;
-  width: 50%;
-}
-
-.img-slider{
-  display: grid;
-  grid-template-rows: 1fr; /* Một cột duy nhất */
-  grid-gap: 10px; /* Khoảng cách giữa hai ảnh */
-  font-size: large;
+/* Phần 10/10 Shoppee live */
+.stardust-icon{
+  font-size: .5625rem;
+  stroke: currentColor;
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    
 }
