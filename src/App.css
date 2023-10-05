@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+.shoppee-top{
+    
+    background-color: red;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+   height: 2.125rem;
+  background: transparent;
+  position: relative;
+  
+  
+  
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.container a,
+.container div,
+.container li {
+  display: inline-block;
+}
+  
+
+  
+.flex1{
+  text-align: center;
+ margin-left: 100px;
+  
+}
+.flex2{
+ margin-top: auto;
+ text-align: center ;
+ margin-right: 100px;
+ 
+}
+.slider{
+  justify-content: space-between;
+}
+.space{
+  margin-left: 0.629rem;
+  
+}
+.space1{
+  color: #fff;
+    text-decoration: none;
+    /* font-size: .8125rem; */
+    /* font-weight: 300; */
+    padding: 0.25rem;
+    position: relative;
+    overflow: visible;
+    outline: 0;
+}
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+
+.footer a {
+  flex-basis: 50%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-size: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.footer img {
+  max-width: 100%;
+  height: auto;
+  width: 50%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.img-slider{
+  display: grid;
+  grid-template-rows: 1fr; /* Một cột duy nhất */
+  grid-gap: 10px; /* Khoảng cách giữa hai ảnh */
+  font-size: large;
 }
