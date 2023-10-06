@@ -1,3 +1,4 @@
+
 .shoppee-top{
     
     background-color: red;
@@ -164,6 +165,34 @@
 }
 
 /* Phần 10/10 Shoppee live */
+.youlike2{
+  display: flex;
+    justify-content: space-between;
+    padding: 0 .9375rem;
+    min-height: 18.5625rem;
+}
+.youlike2-1-1{
+  display: flex;
+    justify-content: space-between;
+    padding: 0 .84375rem 0 .9375rem;
+    height: 3.75rem;
+    box-sizing: border-box;
+    align-items: center;
+}
+.youlike2-1-1-1{
+  font-size: 1rem;
+    text-transform: uppercase;
+    color: #ee4d2d;
+    white-space: pre;
+}
+.youlike2-1-1-2{
+  color: #ee4d2d;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: flex;
+    font-size: .75rem;
+    align-items: center;
+}
 .stardust-icon{
   font-size: .5625rem;
   stroke: currentColor;
@@ -172,3 +201,238 @@
     height: 1em;
     
 }
+.youlike2-1-2{
+  display: flex;
+    height: 14.8125rem;
+    overflow: hidden;
+    justify-content: center;
+}
+.youlike2-1-2-1{
+  position: relative;
+  box-sizing: border-box;
+  background: #fff;
+  margin-right: .0625rem;
+  text-decoration: none;
+  text-align: center;
+  width: 12.125rem;
+  min-height: 14.8125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 .9375rem;
+}
+.youlike2-1-2-1-1{
+  position: relative;
+}
+.youlike2-1-2-1-2{
+  justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: .9375rem;
+    margin-bottom: .3125rem;
+}
+.youlike2-1-2-1-3{
+  position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+}
+.youlike2-1-2-1-1-1{
+  width: 10.125rem;
+    height: 10.125rem;
+    margin: 0 auto;
+    display: block;
+    background-position: 50%;
+    opacity: 1;
+    transition: opacity .2s ease;
+}
+.youlike2-1-2-1-2-1{
+  color: #ee4d2d;
+  width: 100%;
+  text-align: center;
+  font-size: 1.125rem;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.youlike2-1-2-1-3-1{
+  display: block;
+    background-color: #ffe97a;
+    border-bottom-left-radius: .125rem;
+    padding: .125rem .25rem;
+    display: block;
+    color: #ec3814;
+    font-size: .75rem;
+    line-height: .875rem;
+    font-weight: 500;
+}
+.youlike2-1-2-1-3-1-1{
+  display: block;
+  color: #ec3814;
+  font-size: .75rem;
+  line-height: .875rem;
+  font-weight: 500;
+}
+.img-th{
+  width: 8.75rem;
+  height: 3.5rem!important;
+  background: #fff;
+  box-shadow: 0 0 3px rgba(0,0,0,.14);
+  border-radius: 1.90625rem;
+  margin: 0 auto;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  left: 1.625rem;
+  top: 8.25rem;
+}
+.img-tha{
+  width: auto;
+    height: 100%;
+    transform: translateZ(0);
+    z-index: 2;
+}
+
+
+/* DANH MỤC home-category-list */
+.home-category-list{
+  min-height: 18.875rem;
+    margin-top: 1.25rem;
+    background-color: #fff;
+    /* height: 302px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start; */
+}
+.shopee-header{
+  background: #fff;
+  height: 3.75rem;
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+}
+.shopee-header-title{
+  font-size: 1rem;
+    color: rgba(0,0,0,.54);
+    font-weight: 500;
+    text-transform: uppercase;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 1.25rem;
+}
+.image-carouse{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.image-carouse_item-list-wrapper{
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+.image-carouse_item-list{
+  height: 302px;
+  
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative;
+  
+  padding: 0;
+  margin: 0;
+  width: 135%;
+    transform: translate(0px, 0px);
+    transition: all 500ms ease 0s;
+}
+.image-carouse_item{
+  float: none;
+  height: 151px;
+  width: 120px!important;
+  overflow-x: unset!important;
+  
+    list-style: none;
+    
+    touch-action: pan-y;
+    padding: 0px;
+    overflow-x: hidden;
+    width: 5%;
+     float: left;
+}
+.home-category-list_grid{
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+  border-right: 1px solid rgba(0,0,0,.05);
+  border-bottom: 1px solid rgba(0,0,0,.05);
+  text-align: center;
+  background-color: #fff;
+  display: block;
+  position: relative;
+  transition: transform .1s cubic-bezier(.4,0,.6,1),box-shadow .1s cubic-bezier(.4,0,.6,1);
+  flex-basis: 50%;
+}
+
+.home-category-list_grid::before{
+  content: "";
+    display: block;
+    padding-top: 126%;
+}
+.grid1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grid2{
+  flex-shrink: 1;
+  /* width: 70%; */
+  height: 70%;
+  margin-top: 10%;
+}
+.grid3{
+  height: 100%;
+  position: relative;
+}
+.grid4{
+  opacity: 1; 
+ transition: opacity .2s ease;
+  height: 100%;
+}
+/* Flash sale */
+
+.sale-header{
+
+}
+.sale-header-1{
+
+}
+.sale-header-1-1{
+
+}
+.sale-header-1-2{
+  
+}
+.img-flash-sale{
+  width: 8.125rem;
+  height: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+  background-size: contain;
+}
+/*  */
+/* Shopee mall */
+/* Tìm kiếm hàng đầu */
+/* Gợi ý hôm nay */
