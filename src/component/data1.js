@@ -1,7 +1,15 @@
 const data = [
     {
-        
-            
+        "bff_meta": null,
+        "error": null,
+        "error_msg": null,
+        "reserved_keyword": null,
+        "suggestion_algorithm": null,
+        "algorithm": null,
+        "total_count": 334,
+        "nomore": false,
+        "items": [
+            {
                 "item_basic": {
                     "itemid": 5583157369,
                     "shopid": 364290446,
@@ -16879,6 +16887,54 @@ const data = [
                 "play_icon_ui_type": 1,
                 "item_card_bottom_element": null
             }
-    
+        ],
+        "price_adjust": null,
+        "adjust": {
+            "count": null
+        },
+        "total_ads_count": 0,
+        "hint_keywords": null,
+        "show_disclaimer": false,
+        "json_data": "",
+        "query_rewrite": {
+            "fe_query_write_status": 0,
+            "rewrite_keyword": null,
+            "hint_keywords": null,
+            "ori_keyword": "dép 0đ",
+            "ori_total_count": 334,
+            "rewrite_type": null
+        },
+        "disclaimer_infos": [],
+        "need_next_search": true,
+        "low_result": null,
+        "autoplay_info": null,
+        "food_item_info": {
+            "total_count": 0
+        },
+        "search_tracking": "{\"ab_sign\":[66414,29831,39991,32503,31431,59013,29691,29846,35881,58670,59643,84736,39558,30987,59660,38725,40271,40305,79149,80718,81089,62515,79143,80712,40296,40265,40283,62531,79678,78747,80819,60205,67499,27537,82749,57372],\"ab_test_sign\":null,\"algorithm\":\"\",\"bff_version_tracking\":\"{\\\"Code\\\":\\\"b54ac8f\\\",\\\"Config\\\":\\\"m_cnf=73;others=default;\\\"}\",\"cached_result\":null,\"downstream_tracking\":\"null\",\"is_censor\":false,\"query_expansion_info\":{\"expansion_type\":0},\"request_id\":\"bff-search_vn_sg9_10.168.88.17_{1f8a1b8407097839ff4badd8e7647300:02000012ab420915:010000aef9305b46}_search-bffsearch-live-vn.230925140351085439.230925152904725261\",\"response_time\":1696587113502,\"scene_id\":101010901,\"total_ads_count\":0,\"total_count\":334,\"user_type\":[99],\"version_tracking\":\"{\\\"qp\\\":\\\"{\\\\\\\"Code\\\\\\\":\\\\\\\"362861d4\\\\\\\",\\\\\\\"Config\\\\\\\":\\\\\\\"others=default;spex=0;\\\\\\\"}\\\",\\\"search_server\\\":\\\"{\\\\\\\"Code\\\\\\\":\\\\\\\"release_1005\\\\\\\",\\\\\\\"Config\\\\\\\":\\\\\\\"others=default;\\\\\\\"}\\\"}\"}",
+        "search_sessionid": null,
+        "batch_size": 60,
+        "search_item_bff_tracking": "{\"ab_test_sign\":null,\"version_tracking\":\"{\\\"Code\\\":\\\"b54ac8f\\\",\\\"Config\\\":\\\"m_cnf=73;others=default;\\\"}\",\"cached_result\":null,\"response_time\":1696587113502}",
+        "user_info": {
+            "user_type": [
+                99
+            ],
+            "is_affiliate": false
+        },
+        "request_id": "bff-search_vn_sg9_10.168.88.17_{1f8a1b8407097839ff4badd8e7647300:02000012ab420915:010000aef9305b46}_search-bffsearch-live-vn.230925140351085439.230925152904725261",
+        "cached_result": null,
+        "experiments": [
+            {
+                "key": "sch.user_feedback_in_srp_bff",
+                "value": "0"
+            }
+        ],
+        "item_extra_config": "{\"lowest_discount_price\":100000,\"discount_price_gap\":50000000000,\"ams_label_id\":1428713}",
+        "config": {
+            "highlight_video_delay_ms": 0,
+            "image_ui_type": 0
+        },
+        "live_stream": null
+    }
 ]
 export default data
