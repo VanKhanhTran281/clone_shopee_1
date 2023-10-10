@@ -65,11 +65,11 @@ return(
                               </div>
                             </div>
                             <div className="hpDKMN">
-                              <div className="vioxXd ZZuLsr d5DWld" aria-hidden="true">₫{pro.item_basic.price_max}</div>
+                              <div className="vioxXd ZZuLsr d5DWld" aria-hidden="true">₫{pro.item_basic.price_max/100000}</div>
                               <div className="vioxXd rVLWG6">
                                 <span aria-label="current price"></span>
                                 <span className="recFju">₫</span>
-                                <span className="ZEgDH9">{pro.item_basic.price}</span>
+                                <span className="ZEgDH9">{pro.item_basic.price/100000}</span>
                               </div>
                             </div>
                             <div className="ZnrnMl">
@@ -151,7 +151,7 @@ return(
                                   </div>
                                 </div>
                               </div>
-                              <div className="r6HknA uEPGHT">Đã bán 26,4k</div>
+                              <div className="r6HknA uEPGHT">Đã bán {pro.item_basic.historical_sold}</div>
                             </div>
                             <div className="zGGwiV">
                               <span aria-label="from"></span>

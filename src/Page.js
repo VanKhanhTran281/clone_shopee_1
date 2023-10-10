@@ -133,20 +133,20 @@ const Page = () => {
                 </button>
               </fieldset>
               <fieldset className="shopee-filter-group shopee-facet-filter">
-                <legend className="shopee-filter-group__header">Theo Danh Mục</legend>
+                <legend className="shopee-filter-group__header">Nơi bán</legend>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
                       <input type="checkbox" name="" value="11035813" />
                     </div>
-                    <span className="shopee-checkbox__label">Xăng-đan (51)</span>
+                    <span className="shopee-checkbox__label">Nước ngoài</span>
                   </label></div>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
                       <input type="checkbox" name="" value="11035840" />
                     </div>
-                    <span className="shopee-checkbox__label">Xăng-đan Đế Bằng (51)</span>
+                    <span className="shopee-checkbox__label">Hà Nội</span>
                   </label>
                 </div>
                 <div className="shopee-filter shopee-checkbox-filter">
@@ -154,14 +154,14 @@ const Page = () => {
                     <div className="shopee-checkbox__box">
                       <input type="checkbox" name="" value="11035807" />
                     </div>
-                    <span className="shopee-checkbox__label">Giày Thể Thao/ Sneakers (44)</span>
+                    <span className="shopee-checkbox__label">TP.Hồ Chí Minh</span>
                   </label>
                 </div>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
                       <input type="checkbox" name="" value="11035830" />
-                    </div><span className="shopee-checkbox__label">Giày Thể Thao/ Sneaker (44)</span>
+                    </div><span className="shopee-checkbox__label">Thái Nguyên</span>
                   </label>
                 </div>
                 <button aria-expanded="false" className="shopee-filter-group__toggle-btn" aria-label="">Thêm
@@ -319,11 +319,11 @@ const Page = () => {
                     <section>
                       <button className='sort-price-select'>
                         <Link class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Dropdown
+                          Giá
                         </Link>
                         <ul class="dropdown-menu">
-                          <li><Link class="dropdown-item" href="#">Action</Link></li>
-                          <li><Link class="dropdown-item" href="#">Another action</Link></li>
+                          <li><Link class="dropdown-item" href="#">Giá: Thấp đến Cao</Link></li>
+                          <li><Link class="dropdown-item" href="#">Giá: Cao đến Thấp</Link></li>
                         </ul>
                       </button>
                     </section>

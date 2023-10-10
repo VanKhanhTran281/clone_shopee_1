@@ -309,7 +309,8 @@
     display: flex;
     align-items: center;
     position: relative;
-    margin-right: 1px;
+    margin-right: -10px;
+    font-size: 5px;
 }
 .RS7p\+X .shopee-rating-stars__star-wrapper>.shopee-rating-stars__lit {
     overflow: hidden;
