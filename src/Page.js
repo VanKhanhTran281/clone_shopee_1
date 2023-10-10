@@ -77,7 +77,8 @@ const Page = () => {
 
 
       </header>
-      {/* <Product/> */}
+
+
       <div className='product-page'>
         {/* Content */}
         <div className='product-page-contents'>
@@ -174,71 +175,169 @@ const Page = () => {
             </div>
 
 
-            <div style={{flex: '1', width: '0', minWidth:'0'}}>
-              <section style={{marginBottom:'1.25rem'}}>
-                <div style={{paddingTop:'1.25 rem'}}>
-                  <div className="shopee-header-section__header" style={{display:'flex',alignItems:'center',paddingBottom:'0.625rem'}} >
+            <div style={{ flex: '1', width: '0', minWidth: '0' }}>
+              <section style={{ marginBottom: '1.25rem' }}>
+                <div style={{ paddingTop: '1.25 rem' }}>
+                  <div className="shopee-header-section__header" style={{ display: 'flex', alignItems: 'center', paddingBottom: '0.625rem' }} >
                     <div className="shopee-header-section__header__title">
-                      <h1 style={{fontSize:'unset' ,fontWeight:'unset',margin:'unset'}}>Shop liên quan đến
+                      <h1 style={{ fontSize: 'unset', fontWeight: 'unset', margin: 'unset' }}>Shop liên quan đến
                         <span>
                           <span>"</span>
-                          <span style={{color:'#ee4d2d',marginBottom:'1.25rem'}}>dép 0đ</span>
+                          <span style={{ color: '#ee4d2d', marginBottom: '1.25rem' }}>dép 0đ</span>
                           <span>"</span></span>
                       </h1>
                     </div>
-                    <Link className="shopee-header-section__header-link" tabindex="-1" href="" style={{textDecoration:'none'}}>
+                    <Link className="shopee-header-section__header-link" tabindex="-1" href="" style={{ textDecoration: 'none' }}>
                       <button className="shopee-button-no-outline">Thêm kết quả&nbsp;
-                        <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className="shopee-svg-icon icon-arrow-right" style={{fontSize:'.625rem',color:'#ee4d2d'}}>
+                        <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className="shopee-svg-icon icon-arrow-right" style={{ fontSize: '.625rem', color: '#ee4d2d' }}>
                           <path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z"></path>
                         </svg>
                       </button>
                     </Link></div>
-                    <div className="shopee-header-section__content">
-                      <div className="shopee-search-user-item ">
-                        <div aria-hidden="true" className="shopee-search-user-item__leading">
-                          <div className="shopee-avatar">
-                            <div className="shopee-avatar__placeholder">
+                  <div className="shopee-header-section__content">
+                    <div className="shopee-search-user-item ">
+                      <div aria-hidden="true" className="shopee-search-user-item__leading">
+                        <div className="shopee-avatar">
+                          <div className="shopee-avatar__placeholder">
+                            <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-headshot">
+                              <g>
+                                <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
+                                <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10">
+                                </path>
+                              </g>
+                            </svg>
+                          </div>
+                          <div className="shopee-avatar__img-wrapper">
+                            <div className="shopee-avatar__img"></div>
+                            <div className="shopee-avatar__img_1">
                               <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-headshot">
                                 <g>
                                   <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                  <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10">
-                                  </path>
+                                  <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
                                 </g>
                               </svg>
                             </div>
-                            <div className="shopee-avatar__img-wrapper">
-                              <div className="shopee-avatar__img"></div>
-                              <div className="shopee-avatar__img_1">
-                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-headshot">
-                                  <g>
-                                    <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                    <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
-                                  </g>
-                                </svg>
-                              </div>
-                            </div>
                           </div>
                         </div>
-                        <Link className="shopee-search-user-item__shop-info" href="">
-                          <div className="shopee-search-user-item__nickname">ShoesBao</div>
-                          <div className="shopee-search-user-item__username">r5a1glbjrn</div>
-                          <div className="shopee-search-user-item__follow-count">
-                            <span className="shopee-search-user-item__follow-count-number">68</span>
-                            <span> Người theo dõi</span>
-                            <span> |</span>
-                            <span className="shopee-search-user-item__follow-count-number">1</span><span> Đang Theo</span>
+                      </div>
+                      <Link className="shopee-search-user-item__shop-info" href="">
+                        <div className="shopee-search-user-item__nickname">ShoesBao</div>
+                        <div className="shopee-search-user-item__username">r5a1glbjrn</div>
+                        <div className="shopee-search-user-item__follow-count">
+                          <span className="shopee-search-user-item__follow-count-number">68</span>
+                          <span> Người theo dõi</span>
+                          <span> |</span>
+                          <span className="shopee-search-user-item__follow-count-number">1</span><span> Đang Theo</span>
+                        </div>
+                      </Link>
+
+
+                      {/* <div className="shopee-search-user-item__statistics">
+                        <div className="shopee-search-user-seller-info-item">
+                          <div className="shopee-search-user-seller-info-item__wrapper">
+                            <div className="shopee-search-user-seller-info-item__header">
+                              <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-products">
+                                  <g>
+                                    <path d="m10 1 4.5 2.5-.5 3h-2v7.5h-9v-7.5h-2l-.5-3 4.6-2.5c.3 1.1 1.3 1.9 2.4 1.9s2.1-.8 2.5-1.9z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path>
+                                    <line fill="none" stroke-linecap="round" stroke-miterlimit="10" x1="3" x2="12" y1="11.5" y2="11.5"></line>
+                                  </g></svg></div>
+                              <span className="shopee-search-user-seller-info-item__primary-text">24</span>
+                            </div><div className="shopee-search-user-seller-info-item__complement-text">Sản phẩm</div>
+                          </div></div><div className="shopee-search-user-seller-info-item"><div className="shopee-search-user-seller-info-item__wrapper">
+                            <div className="shopee-search-user-seller-info-item__header">
+                              <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-rating">
+                                  <polygon fill="none" points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                </svg></div><span className="shopee-search-user-seller-info-item__primary-text">4.9</span></div>
+                            <div className="shopee-search-user-seller-info-item__complement-text">Đánh giá</div></div></div>
+                        <div className="shopee-search-user-seller-info-item"><div className="shopee-search-user-seller-info-item__wrapper">
+                          <div className="shopee-search-user-seller-info-item__header"><div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
+                            <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon"><g>
+                              <polygon fill="none" points="14 10.8 7 10.8 3 13.8 3 10.8 1 10.8 1 1.2 14 1.2" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                              <circle cx="4" cy="5.8" r="1" stroke="none"></circle><circle cx="7.5" cy="5.8" r="1" stroke="none"></circle>
+                              <circle cx="11" cy="5.8" r="1" stroke="none"></circle></g></svg></div><span className="shopee-search-user-seller-info-item__primary-text">72%</span>
+                          </div><div className="shopee-search-user-seller-info-item__complement-text">tỉ lệ phản hồi</div>
+                        </div></div><div className="shopee-search-user-seller-info-item">
+                          <div className="shopee-search-user-seller-info-item__wrapper">
+                            <div className="shopee-search-user-seller-info-item__header">
+                              <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
+                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon">
+                                  <g>
+                                    <polyline fill="none" points="7.2 3.5 7.2 7.8 10.5 7.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline>
+                                    <circle cx="7.5" cy="7.5" fill="none" r="6.5" stroke-miterlimit="10"></circle>
+                                  </g></svg></div><span className="shopee-search-user-seller-info-item__primary-text">trong vài giờ</span>
+                            </div><div className="shopee-search-user-seller-info-item__complement-text">thời gian phản hồi</div>
                           </div>
-                        </Link>
-                      
+                        </div>
+                      </div> */}
 
 
-                      
                     </div>
                   </div>
                 </div>
               </section>
               <section>
+                <h1 className='shopee-search-result-header' style={{ margin: '.67em 0' }}>
+                  <div style={{}}>
+                    <svg viewBox="0 0 18 24" class="shopee-svg-icon icon-hint-bulb">
+                      <g transform="translate(-355 -149)">
+                        <g transform="translate(355 149)">
+                          <g fill-rule="nonzero" transform="translate(5.4 19.155556)">
+                            <path d="m1.08489412 1.77777778h5.1879153c.51164401 0 .92641344-.39796911.92641344-.88888889s-.41476943-.88888889-.92641344-.88888889h-5.1879153c-.51164402 0-.92641345.39796911-.92641345.88888889s.41476943.88888889.92641345.88888889z"></path>
+                            <g transform="translate(1.9 2.666667)">
+                              <path d="m .75 1.77777778h2.1c.41421356 0 .75-.39796911.75-.88888889s-.33578644-.88888889-.75-.88888889h-2.1c-.41421356 0-.75.39796911-.75.88888889s.33578644.88888889.75.88888889z"></path>
+                            </g>
+                          </g>
+                          <path d="m8.1 8.77777718v4.66666782c0 .4295545.40294373.7777772.9.7777772s.9-.3482227.9-.7777772v-4.66666782c0-.42955447-.40294373-.77777718-.9-.77777718s-.9.34822271-.9.77777718z" fill-rule="nonzero"></path>
+                          <path d="m8.1 5.33333333v.88889432c0 .49091978.40294373.88888889.9.88888889s.9-.39796911.9-.88888889v-.88889432c0-.49091977-.40294373-.88888889-.9-.88888889s-.9.39796912-.9.88888889z" fill-rule="nonzero"></path>
+                          <path d="m8.80092773 0c-4.86181776 0-8.80092773 3.97866667-8.80092773 8.88888889 0 1.69422221.47617651 3.26933331 1.295126 4.61333331l2.50316913 3.9768889c.30201078.4782222.84303623.7697778 1.42482388.7697778h7.17785139c.7077799 0 1.3618277-.368 1.7027479-.9617778l2.3252977-4.0213333c.7411308-1.2888889 1.1728395-2.7786667 1.1728395-4.37688891 0-4.91022222-3.9409628-8.88888889-8.80092777-8.88888889m0 1.77777778c3.82979317 0 6.94810087 3.18933333 6.94810087 7.11111111 0 1.24444441-.3168334 2.43022221-.9393833 3.51466671l-2.3252977 4.0213333c-.0166754.0284444-.0481735.0462222-.0833772.0462222h-7.07224026l-2.43461454-3.8648889c-.68184029-1.12-1.04128871-2.4053333-1.04128871-3.71733331 0-3.92177778 3.11645483-7.11111111 6.94810084-7.11111111"></path>
+                        </g>
+                      </g>
+                    </svg>
+                  </div>
+                  <span class="shopee-search-result-header__text">Kết quả tìm kiếm cho từ khoá '
+                    <span class="shopee-search-result-header__text-highlight" style={{ color: "rgb(238, 77, 45)", fontWeight: '400' }} >dép 0đ</span>'
+                  </span>
+                </h1>
+                <fieldset className='shopee-sort-bar' style={{ border: '0px' }}>
+                  <legend style={{ display: 'none' }}></legend>
+                  <div className="shopee-sort-bar__label">Sắp xếp theo</div>
+                  <div className='shopee-sort-by-options'>
+                    <section className="shopee-sort-by-options__option-group">
+                      <button aria-label="" aria-pressed="true" className="shopee-sort-by-options__option shopee-sort-by-options__option--selected" style={{ backgroundColor: 'rgb(238, 77, 45)' }}>
+                        <span aria-hidden="true">Liên quan</span>
+                      </button>
+                      <button aria-label="" aria-pressed="false" className="shopee-sort-by-options__option">
+                        <span aria-hidden="true">Mới nhất</span>
+                      </button>
+                      <button aria-label="" aria-pressed="false" className="shopee-sort-by-options__option">
+                        <span aria-hidden="true">Bán chạy</span>
+                      </button>
+                    </section>
 
+                    <section>
+                      <button className='sort-price-select'>
+                        <Link class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Dropdown
+                        </Link>
+                        <ul class="dropdown-menu">
+                          <li><Link class="dropdown-item" href="#">Action</Link></li>
+                          <li><Link class="dropdown-item" href="#">Another action</Link></li>
+                        </ul>
+                      </button>
+                    </section>
+                  </div>
+                  <div>
+
+                  </div>
+                </fieldset>
+                <ul className='shopee-search-item-result__items'>
+                  <Product/>
+                </ul>
+                <div>
+
+                </div>
               </section>
             </div>
           </div>

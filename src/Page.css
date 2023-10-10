@@ -269,3 +269,110 @@
     color: #ee4d2d;
     
 }
+
+
+/* Content item */
+.shopee-search-result-header{
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+    color: #555;
+}
+.shopee-search-result-header .icon-hint-bulb {
+    position: relative;
+    top: .125rem;
+    width: 1rem;
+    height: 1.375rem;
+    margin: 0 .75rem 0 0;
+    color: #555;
+}
+.shopee-search-result-header__text{
+    padding: .1875rem 0;
+}
+.shopee-sort-bar{
+    font-weight: 400;
+    background: rgba(0,0,0,.03);
+    padding: .8125rem 1.25rem;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2px;
+}
+.shopee-sort-bar__label{
+    color: #555;
+    margin: 0 .3125rem 0 0;
+}
+.shopee-sort-by-options {
+    display: flex;
+    align-items: stretch;
+    flex: 1;
+    grid-gap: .625rem;
+    gap: .625rem;
+    justify-content: flex-start;
+}
+.shopee-sort-by-options__option-group{
+    display: flex;
+    grid-gap: .625rem;
+    gap: .625rem;
+    margin-left: .625rem;
+}
+.shopee-sort-by-options__option{
+    
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.02);
+    height: 2.125rem;
+    line-height: 2.125rem;
+    border-radius: 2px;
+    border: 0;
+    overflow: visible;
+    outline: 0;
+    cursor: pointer;
+    -moz-user-select: none;
+    user-select: none;
+    position: relative;
+    display: flex;
+    min-width: 5.625rem;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    padding: 0 .9375rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: #fff;
+}
+.shopee-sort-by-options__option--selected{
+    color: #fff;
+    background: #ee4d2d;
+}
+.sort-price-select {
+    text-align: left;
+    cursor: pointer;
+    border: 0;
+    border-radius: 2px;
+    height: 2.125rem;
+    line-height: 2.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-sizing: border-box;
+    min-width: 12.5rem;
+    background: #fff;
+    transition: border-color .1s ease;
+    padding-left: .75rem;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.02);
+}
+
+/* render mat hang */
+.shopee-search-item-result__items{
+    list-style-type: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
