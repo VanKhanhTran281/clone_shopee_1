@@ -1,4 +1,4 @@
-import React from 'react';
+import {useEffect, useState} from 'react';
 import Home from './Home';
 import './App.css'
 import './Page.css'
@@ -14,8 +14,107 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import 'bootstrap/dist/css/bootstrap.css';
 import Product from './component/dep';
+import ProductHome from './component/pagehome'
+import data from './component/data';
+
 
 const Page = () => {
+  // const [products,setProducts] = useState(data);
+  // const [filter,setFilter] = useState({
+  //   location: {
+  //     hanoi: {
+  //       checked: false,
+  //       value: ''
+  //     }
+  //   }
+  // });
+  // const [selectedLocations, setSelectedLocations] = useState([]);
+  
+  // const handleCheckboxChange = (event) => {
+  //   const value = event.target.value;
+    
+  //   if (value ===filter.location.hanoi.value) {
+  //    setFilter({
+  //     ...filter,
+  //     location:{
+  //       ...filter.location,
+  //       hanoi:{
+  //         checked:  event.target.checked,
+  //         value: value
+  //       }
+  //     }
+  //    })
+  //   }
+  // };
+  // useEffect(() => {
+  //   if (filter.location.hanoi.checked) {
+  //     const newPr = products.filter(e => e.item_basic.shop_location ===filter.location.hanoi.value );
+  //     setProducts(newPr);
+  //   }
+  // }, [filter]);
+  const [products,setProducts] = useState(data);
+const [filter, setFilter] = useState({
+  location: {
+    nuocngoai: {
+      checked: false,
+      value: ''
+    },
+    hanoi: {
+      checked: false,
+      value: ''
+    },
+    hochiminh: {
+      checked: false,
+      value: ''
+    },
+    thainguyen: {
+      checked: false,
+      value: ''
+    }
+  }
+});
+
+console.log(products);
+console.log(filter);
+const [selectedLocations, setSelectedLocations] = useState([]);
+
+const handleCheckboxChange = (event) => {
+  const { name, checked, value } = event.target;
+
+  setFilter({
+    ...filter,
+    location: {
+      ...filter.location,
+      [name]: {
+        checked,
+        value
+      }
+    }
+  });
+
+  if (checked) {
+    setSelectedLocations((prevSelectedLocations) => [...prevSelectedLocations, value]);
+  } else {
+    setSelectedLocations((prevSelectedLocations) => prevSelectedLocations.filter((location) => location !== value));
+  }
+};
+console.log(selectedLocations)
+useEffect(() => {
+  const newPr = products.filter((product) => {
+    console.log('product',product);
+    // return selectedLocations.includes(product.item_basic.shop_location);
+  });
+  // setProducts(newPr);
+}, [selectedLocations]);
+  
+const upProducts=()=>{
+  const sortedProducts = [...products].sort((a, b) => a.item_basic.price - b.item_basic.price);
+  setProducts(sortedProducts);
+}
+const downProducts=()=>{
+  const sortedProducts = [...products].sort((a, b) => b.item_basic.price - a.item_basic.price);
+  setProducts(sortedProducts);
+}
   return (
 
 
@@ -137,14 +236,14 @@ const Page = () => {
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035813" />
+                      <input type="checkbox" name="nuocngoai" value="Nước Ngoài " checked={filter.location.nuocngoai.checked} onChange={handleCheckboxChange}/>
                     </div>
                     <span className="shopee-checkbox__label">Nước ngoài</span>
                   </label></div>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035840" />
+                      <input type="checkbox" name="hanoi" value="Hà Nội" checked={filter.location.hanoi.checked} onChange={handleCheckboxChange}/>
                     </div>
                     <span className="shopee-checkbox__label">Hà Nội</span>
                   </label>
@@ -152,7 +251,7 @@ const Page = () => {
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035807" />
+                      <input type="checkbox" name="hochiminh" value="TP. Hồ Chí Minh" checked={filter.location.hochiminh.checked} onChange={handleCheckboxChange}/>
                     </div>
                     <span className="shopee-checkbox__label">TP.Hồ Chí Minh</span>
                   </label>
@@ -160,7 +259,7 @@ const Page = () => {
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035830" />
+                      <input type="checkbox" name="thainguyen" value="Thái Nguyên" checked={filter.location.thainguyen.checked} onChange={handleCheckboxChange}/>
                     </div><span className="shopee-checkbox__label">Thái Nguyên</span>
                   </label>
                 </div>
@@ -322,8 +421,8 @@ const Page = () => {
                           Giá
                         </Link>
                         <ul class="dropdown-menu">
-                          <li><Link class="dropdown-item" href="#">Giá: Thấp đến Cao</Link></li>
-                          <li><Link class="dropdown-item" href="#">Giá: Cao đến Thấp</Link></li>
+                          <li><Link class="dropdown-item" href="#" onClick={upProducts}>Giá: Thấp đến Cao</Link></li>
+                          <li><Link class="dropdown-item" href="#" onClick={downProducts}>Giá: Cao đến Thấp</Link></li>
                         </ul>
                       </button>
                     </section>
@@ -333,7 +432,15 @@ const Page = () => {
                   </div>
                 </fieldset>
                 <ul className='shopee-search-item-result__items'>
-                  <Product/>
+                  {/* {(() => {
+                      if (selectedLocations.includes('11035840')) {
+                        return <Product products={products}/>
+                      } else {
+                        return <ProductHome/>;
+                      }
+                    })()} */}
+                    <ProductHome products={products} />
+                  
                 </ul>
                 <div>
 
@@ -351,5 +458,4 @@ const Page = () => {
     </>
   )
 };
-
 export default Page;

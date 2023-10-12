@@ -2,14 +2,12 @@ import {useEffect,useState} from 'react'
 import { BrowserRouter, Routes, Route ,Link} from "react-router-dom";
 import data from './data'
 import './dep.css'
-function Product(){
-const [products] = useState(data);
+
+function ProductHome({products}){
+
 return(
     <>
-       {products.map((pro)=>{
-        
-        if(pro.item_basic.shop_location==='Hà Nội'){
-          return(
+       {products.map(pro=>(
           <li className="shopee-search-item-result__item" data-sqe="item" key={pro.item_basic.itemid}>
                     <Link style={{textDecoration: 'none'}} data-sqe="link" href="/JOFANNY-dép-nam-nữ-cánh-hoa-chống-trượt-quai-ngang-bánh-mì-nữ-bốn-màu-tùy-chọn-đế-cao-3cm-i.966414535.20878379471?sp_atk=98f10986-3276-4990-9554-ccd244603a81&amp;xptdk=98f10986-3276-4990-9554-ccd244603a81">
                       <div className="tWpFe2">
@@ -81,13 +79,13 @@ return(
                                       <div className="shopee-rating-stars__lit" style={{width: '100%'}}>
                                         <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
                                           <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                            strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                           </polygon>
                                         </svg>
                                       </div>
                                       <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
                                         <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                          strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                         </polygon>
                                       </svg>
                                     </div>
@@ -95,27 +93,12 @@ return(
                                       <div className="shopee-rating-stars__lit" style={{width:'100%'}}>
                                         <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
                                           <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                            strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                           </polygon>
                                         </svg>
                                       </div>
                                       <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
-                                        <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
-                                        </polygon>
-                                      </svg>
-                                    </div>
-                                    {/*  */}
-                                    <div className="shopee-rating-stars__star-wrapper">
-                                      <div className="shopee-rating-stars__lit" style={{width:'100%'}}>
-                                        <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
-                                          <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                            strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
-                                          </polygon>
-                                        </svg>
-                                      </div>
-                                      <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
-                                        <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                          strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                        <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                         </polygon>
                                       </svg>
                                     </div>
@@ -124,13 +107,28 @@ return(
                                       <div className="shopee-rating-stars__lit" style={{width:'100%'}}>
                                         <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
                                           <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                            strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                           </polygon>
                                         </svg>
                                       </div>
                                       <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
                                         <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                          strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                        </polygon>
+                                      </svg>
+                                    </div>
+                                    {/*  */}
+                                    <div className="shopee-rating-stars__star-wrapper">
+                                      <div className="shopee-rating-stars__lit" style={{width:'100%'}}>
+                                        <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
+                                          <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+                                          </polygon>
+                                        </svg>
+                                      </div>
+                                      <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
+                                        <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                         </polygon>
                                       </svg>
                                     </div>
@@ -139,13 +137,13 @@ return(
                                       <div className="shopee-rating-stars__lit" style={{width:'41.7392%'}}>
                                         <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__gold-star icon-rating-solid">
                                           <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                            strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                           </polygon>
                                         </svg>
                                       </div>
                                       <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon shopee-rating-stars__dark-star icon-rating-solid">
                                         <polygon points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4"
-                                          strokeLinecap="round" strokeLinejoin="round" stroke-miterlimit="10">
+                                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
                                         </polygon>
                                       </svg>
                                     </div>
@@ -163,14 +161,14 @@ return(
                         </div>
                       </div>
                     </Link>
-                  </li>)
+                  </li>
       
-        }})}
+      ))}
       
-    
+      
     </>
   )
 
 
 }
-export default Product
+export default ProductHome
