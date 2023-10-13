@@ -1,9 +1,9 @@
-import {useEffect, useState} from 'react';
+import { useEffect, useState } from 'react';
 import Home from './Home';
 import './App.css'
 import './Page.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { formGroupClasses } from '@mui/material';
+
 import SvgIcon from '@mui/material/SvgIcon';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -16,105 +16,100 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Product from './component/dep';
 import ProductHome from './component/pagehome'
 import data from './component/data';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 
 
 const Page = () => {
-  // const [products,setProducts] = useState(data);
-  // const [filter,setFilter] = useState({
-  //   location: {
-  //     hanoi: {
-  //       checked: false,
-  //       value: ''
-  //     }
-  //   }
-  // });
-  // const [selectedLocations, setSelectedLocations] = useState([]);
-  
-  // const handleCheckboxChange = (event) => {
-  //   const value = event.target.value;
-    
-  //   if (value ===filter.location.hanoi.value) {
-  //    setFilter({
-  //     ...filter,
-  //     location:{
-  //       ...filter.location,
-  //       hanoi:{
-  //         checked:  event.target.checked,
-  //         value: value
-  //       }
-  //     }
-  //    })
-  //   }
-  // };
-  // useEffect(() => {
-  //   if (filter.location.hanoi.checked) {
-  //     const newPr = products.filter(e => e.item_basic.shop_location ===filter.location.hanoi.value );
-  //     setProducts(newPr);
-  //   }
-  // }, [filter]);
-  const [products,setProducts] = useState(data);
-const [filter, setFilter] = useState({
-  location: {
-    nuocngoai: {
-      checked: false,
-      value: ''
-    },
-    hanoi: {
-      checked: false,
-      value: ''
-    },
-    hochiminh: {
-      checked: false,
-      value: ''
-    },
-    thainguyen: {
-      checked: false,
-      value: ''
-    }
-  }
-});
 
-console.log(products);
-console.log(filter);
-const [selectedLocations, setSelectedLocations] = useState([]);
-
-const handleCheckboxChange = (event) => {
-  const { name, checked, value } = event.target;
-
-  setFilter({
-    ...filter,
+  const [products, setProducts] = useState(data);
+  const [filter, setFilter] = useState({
     location: {
-      ...filter.location,
-      [name]: {
-        checked,
-        value
+      nuocngoai: {
+        checked: false,
+        value: ''
+      },
+      hanoi: {
+        checked: false,
+        value: ''
+      },
+      hochiminh: {
+        checked: false,
+        value: ''
+      },
+      thainguyen: {
+        checked: false,
+        value: ''
       }
     }
   });
 
-  if (checked) {
-    setSelectedLocations((prevSelectedLocations) => [...prevSelectedLocations, value]);
-  } else {
-    setSelectedLocations((prevSelectedLocations) => prevSelectedLocations.filter((location) => location !== value));
+  // console.log(products);
+  const [selectedLocations, setSelectedLocations] = useState([]);
+  // console.log(selectedLocations);
+
+  const handleCheckboxChange = (event) => {
+    const { name, checked, value } = event.target;
+
+    // setFilter({
+    //   ...filter,
+    //   location: {
+    //     ...filter.location,
+    //     [name]: {
+    //       checked,
+    //       value
+    //     }
+    //   }
+    // });
+
+    if (checked) {
+      setSelectedLocations((prevSelectedLocations) => [...prevSelectedLocations, value]);
+    } else {
+      const newLocations = selectedLocations.filter(e => e !== value)
+      setSelectedLocations(newLocations);
+    }
+  };
+  useEffect(() => {
+    if (selectedLocations.length > 0) {
+      const newPr = data.filter((product) => {
+        return selectedLocations.includes(product.item_basic.shop_location)
+      });
+      setProducts(newPr)
+    } else {
+      setProducts(data)
+    }
+  }, [selectedLocations]);
+  // Phần sắp xếp theo giá sản phẩm
+  const upProducts = () => {
+    const sortedProducts = [...products].sort((a, b) => a.item_basic.price - b.item_basic.price);
+    setProducts(sortedProducts);
   }
-};
-console.log(selectedLocations)
-useEffect(() => {
-  const newPr = products.filter((product) => {
-    console.log('product',product);
-    // return selectedLocations.includes(product.item_basic.shop_location);
-  });
-  // setProducts(newPr);
-}, [selectedLocations]);
-  
-const upProducts=()=>{
-  const sortedProducts = [...products].sort((a, b) => a.item_basic.price - b.item_basic.price);
-  setProducts(sortedProducts);
-}
-const downProducts=()=>{
-  const sortedProducts = [...products].sort((a, b) => b.item_basic.price - a.item_basic.price);
-  setProducts(sortedProducts);
-}
+  const downProducts = () => {
+    const sortedProducts = [...products].sort((a, b) => b.item_basic.price - a.item_basic.price);
+    setProducts(sortedProducts);
+  }
+  // Search
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  const handleSearch = () => {
+    if (searchTerm.length > 0) {
+      const filtered = products.filter(product =>
+        product.item_basic.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      console.log(filtered)
+      // setFilteredProducts(filtered);
+      setProducts(filtered);
+    }
+    else {
+      setProducts(data)
+    }
+
+  };
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+    handleSearch();
+  };
   return (
 
 
@@ -129,6 +124,7 @@ const downProducts=()=>{
               <div className='space space1' style={{ color: '#fff' }}>Kết nối </div>
               <div className='space1'><FacebookIcon /> <InstagramIcon /></div>
             </div>
+            <div style={{ flex: '1' }}></div>
             <ul className='flex2'>
               <li className='space' style={{ color: '#fff' }}><NotificationsNoneIcon />Thông báo</li>
               <Link to='/page' className='space space1' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ trợ</Link>
@@ -140,22 +136,24 @@ const downProducts=()=>{
           </nav>
         </div>
 
-        <div  >
-          <form className="shopee-searchbar-input" style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div>
-              <Link to='/' style={{ color: '#fff', fontSize: '25px', textDecoration: 'none' }} >
-                <SvgIcon style={{ fontSize: '100px', height: '45px' }}>
+        <div className='shopee-searchbar'>
+          <form className="shopee-searchbar-input" autocomplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ display: 'flex', alignItems: "center" }}>
+              <Link to='/' style={{ color: '#fff', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
+                <LocalMallIcon style={{ fontSize: '50' }}>
                   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                </SvgIcon>Shoppee
+                </LocalMallIcon>
+                <span style={{ fontSize: '35px' }}>Shopee</span>
               </Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column ', justifyContent: "flex-start" }}>
               <div style={{ display: 'flex' }}>
-                <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '800px' }} />
-                <button style={{ backgroundColor: 'red', border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
+                <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '840px', borderRadius: '5px' }} value={searchTerm}
+          onChange={handleChange}/>
+                <button className='button-search' style={{ border: 'none', outline: 'none' }} onClick={handleSearch}><SearchIcon style={{ color: '#fff' }} /></button>
               </div>
-              <div className="" style={{ fontSize: '12px' }}>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/'>Dép 1k</Link>
+              <div class="" style={{ fontSize: '12px' }}>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Dép 1k</Link>
                 <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Áo 1k</Link>
                 <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Set Kẹp Tóc</Link>
                 <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Dép Nam</Link>
@@ -236,14 +234,14 @@ const downProducts=()=>{
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="nuocngoai" value="Nước Ngoài " checked={filter.location.nuocngoai.checked} onChange={handleCheckboxChange}/>
+                      <input type="checkbox" name="nuocngoai" value="Nước Ngoài" checked={selectedLocations.includes('Nước Ngoài')} onChange={handleCheckboxChange} />
                     </div>
                     <span className="shopee-checkbox__label">Nước ngoài</span>
                   </label></div>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="hanoi" value="Hà Nội" checked={filter.location.hanoi.checked} onChange={handleCheckboxChange}/>
+                      <input type="checkbox" name="hanoi" value="Hà Nội" checked={selectedLocations.includes('Hà Nội')} onChange={handleCheckboxChange} />
                     </div>
                     <span className="shopee-checkbox__label">Hà Nội</span>
                   </label>
@@ -251,7 +249,7 @@ const downProducts=()=>{
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="hochiminh" value="TP. Hồ Chí Minh" checked={filter.location.hochiminh.checked} onChange={handleCheckboxChange}/>
+                      <input type="checkbox" name="hochiminh" value="TP. Hồ Chí Minh" checked={selectedLocations.includes('TP. Hồ Chí Minh')} onChange={handleCheckboxChange} />
                     </div>
                     <span className="shopee-checkbox__label">TP.Hồ Chí Minh</span>
                   </label>
@@ -259,7 +257,7 @@ const downProducts=()=>{
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="thainguyen" value="Thái Nguyên" checked={filter.location.thainguyen.checked} onChange={handleCheckboxChange}/>
+                      <input type="checkbox" name="thainguyen" value="Thái Nguyên" checked={selectedLocations.includes('Thái Nguyên')} onChange={handleCheckboxChange} />
                     </div><span className="shopee-checkbox__label">Thái Nguyên</span>
                   </label>
                 </div>
@@ -439,8 +437,8 @@ const downProducts=()=>{
                         return <ProductHome/>;
                       }
                     })()} */}
-                    <ProductHome products={products} />
-                  
+                  <ProductHome products={products} />
+
                 </ul>
                 <div>
 

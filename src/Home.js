@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import './App.css'
-// import { Link } from '@mui/material';
-import SvgIcon from '@mui/material/SvgIcon';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -11,6 +9,7 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import 'bootstrap/dist/css/bootstrap.css';
+import LocalMallIcon from '@mui/icons-material/LocalMall';
 
 
 const Home = () => {
@@ -27,6 +26,7 @@ const Home = () => {
               <div className='space space1' style={{ color: '#fff' }}>Kết nối </div>
               <div className='space1'><FacebookIcon /> <InstagramIcon /></div>
             </div>
+            <div style={{flex:'1'}}></div>
             <ul className='flex2'>
               <li className='space' style={{ color: '#fff' }}><NotificationsNoneIcon />Thông báo</li>
               <Link to='/page' className='space space1' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ trợ</Link>
@@ -38,19 +38,20 @@ const Home = () => {
           </nav>
         </div>
 
-        <div  >
-          <form class="shopee-searchbar-input" autocomplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <div>
-              <Link style={{ color: '#fff', fontSize: '25px', textDecoration: 'none' }} >
-                <SvgIcon style={{ fontSize: '100px', height: '45px' }}>
+        <div  className='shopee-searchbar'>
+          <form className="shopee-searchbar-input" autocomplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <div style={{ display:'flex' ,alignItems:"center" }}>
+              <Link style={{ color: '#fff', textDecoration: 'none',display:'flex' ,alignItems:"center"  }} >
+                <LocalMallIcon style={{ fontSize: '50' }}>
                   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-                </SvgIcon>Shoppee
+                </LocalMallIcon>
+                <span style={{ fontSize:'35px'  }}>Shopee</span>
               </Link>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column ', justifyContent: "flex-start" }}>
               <div style={{ display: 'flex' }}>
-                <input class="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '800px' }} />
-                <button style={{ backgroundColor: 'red', border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
+                <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '840px',borderRadius:'5px' }} />
+                <button className='button-search' style={{  border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
               </div>
               <div class="" style={{ fontSize: '12px' }}>
                 <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Dép 1k</Link>
@@ -108,8 +109,8 @@ const Home = () => {
                 </div>
 
                 <div className='img-slider'>
-                  <Link className='img-slider1'><img src='https://cf.shopee.vn/file/vn-50009109-fb05767994d3de1374fe6c1e5e2c0747_xhdpi' alt='...' /></Link>
-                  <Link className='img-slider2'><img src='https://cf.shopee.vn/file/vn-50009109-fb05767994d3de1374fe6c1e5e2c0747_xhdpi' alt='...' /></Link>
+                  <Link className='img-slider1'><div className='img-slider1-1'><img className='img-slider1-1-1' src='https://cf.shopee.vn/file/vn-50009109-fb05767994d3de1374fe6c1e5e2c0747_xhdpi' alt='...' /></div></Link>
+                  <Link className='img-slider2'><div className='img-slider2-1'><img className='img-slider2-1-1' src='https://cf.shopee.vn/file/vn-50009109-fb05767994d3de1374fe6c1e5e2c0747_xhdpi' alt='...' /></div></Link>
                 </div>
               </div>
             </div>
@@ -389,6 +390,270 @@ const Home = () => {
         </div>
       </div>
 
+
+      {/* Footer */}
+      <div className='footer' role='contentinfo'>
+        {/* Shopee gì cũng có */}
+        <div>
+          
+        </div>
+
+        {/* Danh mục */}
+        <div>
+
+        </div>
+
+        {/* Chăm sóc khách hàng */}
+        <div className='footer-navigation'>
+          <div className='customer-care'>
+              <div className='customer-care1'>
+                  <div className='customer-care1-1'>
+                    <div className='customer-care1-1-1'>
+                      CHĂM SÓC KHÁCH HÀNG
+                    </div>
+                    <ul className='customer-care1-1-2'>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                    </ul>
+                  </div>
+                  <div className='customer-care1-1'>
+                    <div className='customer-care1-1-1'>
+                      VỀ SHOPEE
+                    </div>
+                    <ul className='customer-care1-1-2'>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                    </ul>
+                  </div>
+                  <div className='customer-care1-1'>
+                    <div className='customer-thanhtoan1'>THANH TOÁN</div>
+                    <ul className='customer-thanhtoan2'>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                    </ul>
+                    <div className='customer-thanhtoan3'>ĐƠN VỊ VẬN CHUYỂN</div>
+                    <ul className='customer-thanhtoan2'>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='customer-care1-1'>
+                    <div className='customer-care1-1-1'>THEO DÕI CHÚNG TÔI TRÊN</div>
+                    <ul className='footer-linkweb'>
+                      <li className='footer-linkweb1'>
+                        <Link className='footer-linkweb1-1'>
+                          <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/2277b37437aa470fd1c71127c6ff8eb5' alt=''/>
+                          <span className='footer-linkweb1-1-2 hoverr'>Facebook</span>
+                        </Link>
+                      </li>
+                      <li className='footer-linkweb1'>
+                        <Link className='footer-linkweb1-1'>
+                          <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/5973ebbc642ceee80a504a81203bfb91' alt=''/>
+                          <span className='footer-linkweb1-1-2 hoverr'>Instagram</span>
+                        </Link>
+                      </li>
+                      <li className='footer-linkweb1'>
+                        <Link className='footer-linkweb1-1'>
+                          <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/f4f86f1119712b553992a75493065d9a' alt=''/>
+                          <span className='footer-linkweb1-1-2 hoverr'>Linkedln</span>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='customer-care1-1'>
+                    <div className='customer-care1-1-1'>TẢI ỨNG DỤNG SHOPEE NGAY THÔI</div>
+                    <div className='footer-dowload'>
+                      <Link className='footer-dowload1'>
+                        <img className='footer-dowload1-1' src='https://down-vn.img.susercontent.com/file/a5e589e8e118e937dc660f224b9a1472' alt=''/>
+                      </Link>
+                      <div className='footer-dowload2'>
+                        <Link className='footer-dowload2-1'>
+                          <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ad01628e90ddf248076685f73497c163' alt=''/>
+                        </Link>
+                        <Link className='footer-dowload2-1'>
+                          <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ae7dced05f7243d0f3171f786e123def' alt=''/>
+                        </Link>
+                        <Link className='footer-dowload2-1'>
+                          <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/35352374f39bdd03b25e7b83542b2cb0' alt=''/>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              <div className='customer-care2'>
+                <div className='customer-care2-1-1'>© 2023 Shopee. Tất cả các quyền được bảo lưu.</div>
+                <div className='customer-care2-2'>
+                  <div className='customer-care2-2-1-1'>Quốc gia &amp; Khu vực:</div>
+                  
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Singapore</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Indonesia</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Đài Loan</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Thái Lan</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Malaysia</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Việt Nam</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Philippines</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Brazil</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>México</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Colombia</Link>
+                  </div>
+                  <div className='customer-care2-2-2'>
+                    <Link className='customer-care2-2-2-1'>Chile</Link>
+                </div>
+              </div>
+                  
+              </div>
+          </div>
+          {/* Chính sách */}
+          <div className='policys'>
+            <div className='policy'>
+              <div className='list-policy'>
+                <div className='list-policy1'>
+                  <Link className='list-policy1-1'>
+                    <span>Chính sách bảo mật</span>
+                  </Link>
+                </div>
+                <div className='list-policy1'>
+                  <Link className='list-policy1-1'>
+                    <span>Quy chế hoạt động</span>
+                  </Link>
+                </div>
+                <div className='list-policy1'>
+                  <Link className='list-policy1-1'>
+                    <span>Chính sách vận chuyển</span>
+                  </Link>
+                </div>
+                <div className='list-policy1'>
+                  <Link className='list-policy1-1'>
+                    <span>Chính sách trả hàng và hoàn tiền</span>
+                  </Link>
+                </div>
+              </div>
+              <div className='img-footer'>
+                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt=''/></Link>
+                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt=''/></Link>
+                <Link className='img-footer1'><img className='img-footer1-2' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt=''/></Link>
+              </div>
+              <div style={{marginBottom:'1.5625rem',display:'block',width:'100%',textAlign:'center',marginTop:'0.5rem'}}>Công ty TNHH Shopee</div>
+              <div style={{display:'block',width:'100%',textAlign:'center',marginTop:'0.5rem'}} >Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</div>
+              <div style={{display:'block',width:'100%',textAlign:'center',marginTop:'0.5rem'}} >Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -  Điện thoại liên hệ: 024 73081221 (ext 4678)</div>
+              <div style={{display:'block',width:'100%',textAlign:'center',marginTop:'0.5rem'}} >Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</div>
+              <div style={{display:'block',width:'100%',textAlign:'center',marginTop:'0.5rem'}} >© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
     </>
