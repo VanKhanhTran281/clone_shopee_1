@@ -1,0 +1,138 @@
+body{
+    /* background-color: #e8e8e8; */
+}
+.details-main{
+    transition: margin-top .3s cubic-bezier(.4,0,.2,1);
+    font-size: .875rem;
+    -webkit-text-size-adjust: none;
+  
+}
+.details-main1{
+
+}
+.details-content{
+    margin-right: auto;
+    margin-left: auto;
+    width: 1200px;
+    padding-bottom: 4.375rem;
+}
+.details-content1{
+    margin-top: 1.25rem;
+    height: 1rem;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+}
+.details-content2{
+    padding: 0;
+    margin-top: 1.25rem;
+    display: flex;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.05);
+}
+.details-content1-1{
+    text-decoration: none;
+    font-size: .8125rem;
+    color: #05a;
+    white-space: nowrap;
+}
+.details-content1-2{
+    font-size: .625rem;
+    margin: 0 5px;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    position: relative;
+}
+.details-content1-3{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: .975rem;
+}
+.details-content2-text{
+    margin: 0;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    z-index: -1000;
+    font-size: 2rem;
+}
+.details-content2-img{
+    width: 450px;
+    padding: 15px;
+    flex-shrink: 0;
+}
+.details-content2-pro{
+    flex: 1 0 auto;
+    width: 0;
+    display: flex;
+
+}
+.details-img{
+    display: flex;
+    flex-direction: column;
+}
+.details-img1{
+position: relative;
+}
+.details-img1-1{
+position: relative;
+}
+.details-img1-1-1{
+
+}
+.details-img1-1-2{
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+.details-img1-1-2-1{
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.details-img2{
+
+}
+.details-like{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.details-share{
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+}
+.details-love{
+    border-left: 1px solid rgba(0,0,0,.09);
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.details-love1{
+    position: relative;
+    overflow: visible;
+    outline: 0;
+    background-color: initial;
+    border: 0;
+    display: flex;
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.details-love1-1{
+    font-size: 16px;
+    color: #222;font-size: 18px;
+}

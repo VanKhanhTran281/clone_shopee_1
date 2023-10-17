@@ -20,19 +20,19 @@ const Home = () => {
         <div className="main">
           <nav className='container'>
             <div className='flex1'>
-              <Link className='space space1' style={{ color: '#fff' }}>Kênh người bán</Link>
-              <Link className='space space1' style={{ color: '#fff' }}>Trở thành người bán Shoppee</Link>
-              <div className='space space1' style={{ color: '#fff' }}>Tải ứng dụng</div>
+              <Link className='space space1 space2' style={{ color: '#fff' }}>Kênh người bán</Link>
+              <Link className='space space1 space2' style={{ color: '#fff' }}>Trở thành người bán Shoppee</Link>
+              <div className='space space1 space2' style={{ color: '#fff' }}>Tải ứng dụng</div>
               <div className='space space1' style={{ color: '#fff' }}>Kết nối </div>
               <div className='space1'><FacebookIcon /> <InstagramIcon /></div>
             </div>
             <div style={{flex:'1'}}></div>
             <ul className='flex2'>
-              <li className='space' style={{ color: '#fff' }}><NotificationsNoneIcon />Thông báo</li>
-              <Link to='/page' className='space space1' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ trợ</Link>
-              <span className='space space1' style={{ color: '#fff' }}><LanguageIcon />Tiếng việt</span>
-              <Link className='space space1' style={{ color: '#fff' }}>Đăng kí</Link>
-              <Link className='space space1' style={{ color: '#fff' }}>Đăng nhập</Link>
+              <li className='space space2' style={{ color: '#fff'  }}><NotificationsNoneIcon />Thông Báo</li>
+              <Link to='/page' className='space space1 space2' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ Trợ</Link>
+              <span className='space space1 space2' style={{ color: '#fff' }}><LanguageIcon />Tiếng Việt</span>
+              <Link to='/signup' className='space space1 space2' style={{ color: '#fff' }}>Đăng Ký</Link>
+              <Link to='/login' className='space space1 space2' style={{ color: '#fff' }}>Đăng Nhập</Link>
 
             </ul>
           </nav>
@@ -54,17 +54,17 @@ const Home = () => {
                 <button className='button-search' style={{  border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
               </div>
               <div class="" style={{ fontSize: '12px' }}>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Dép 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Áo 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Set Kẹp Tóc</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Dép Nam</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>iPhone 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Điện Thoại Giá Rẻ 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Sét Đồ Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Áo Khoác 1k Freeship</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Túi Xách Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Ốp iPhone</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none' }} to='/page'>Giày Nữ</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none' ,fontSize:'12px' }} to='/page'>Dép 1k</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none' ,fontSize:'12px' }} to='/page'>Áo 1k</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Set Kẹp Tóc</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Dép Nam</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>iPhone 1k</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Điện Thoại Giá Rẻ 1k</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Sét Đồ Nữ</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Áo Khoác 1k Freeship</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Túi Xách Nữ</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Ốp iPhone</Link>
+                <Link className='space' style={{ color: '#fff', textDecoration: 'none',fontSize:'12px' }} to='/page'>Giày Nữ</Link>
               </div>
 
             </div>
@@ -413,16 +413,16 @@ const Home = () => {
                     </div>
                     <ul className='customer-care1-1-2'>
                       <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Blog</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Mall</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Mua Hàng</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Bán Hàng</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Thanh Toán</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Xu</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận CHUYỂN</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trả Hàng & Hoàn Tiền</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chăm Sóc Khách Hàng</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Hành</span></Link></li>
                     </ul>
                   </div>
                   <div className='customer-care1-1'>
@@ -430,15 +430,15 @@ const Home = () => {
                       VỀ SHOPEE
                     </div>
                     <ul className='customer-care1-1-2'>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Giới Thiệu Về Shopee Việt Nam</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Tuyển Dụng</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Điều Khoản Shopee</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Mật</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Hãng</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Kênh Người Bán</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Flash Sales</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chương Trình Tiếp Thị liên kết Shopee</span></Link></li>
+                      <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Liên Hệ Với Truyền Thông</span></Link></li>
                     </ul>
                   </div>
                   <div className='customer-care1-1'>
@@ -451,37 +451,37 @@ const Home = () => {
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/2c46b83d84111ddc32cfd3b5995d9281' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/5e3f0bee86058637ff23cfdf2e14ca09' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/9263fa8c83628f5deff55e2a90758b06' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/0217f1d345587aa0a300e69e2195c492' alt=''/>
                         </Link>
                       </li>
                     </ul>
@@ -489,42 +489,57 @@ const Home = () => {
                     <ul className='customer-thanhtoan2'>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/vn-50009109-159200e3e365de418aae52b840f24185' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/d10b0ec09f0322f9201a4f3daf378ed2' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/77bf96a871418fbc21cc63dd39fb5f15' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/59270fb2f3fbb7cbc92fca3877edde3f' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/957f4eec32b963115f952835c779cd2c' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/0d349e22ca8d4337d11c9b134cf9fe63' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/3900aefbf52b1c180ba66e5ec91190e5' alt=''/>
                         </Link>
                       </li>
                       <li className='customer-thanhtoan2-1'>
                         <Link className='customer-thanhtoan2-1-1'>
-                          <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt=''/>
+                          <img src='https://down-vn.img.susercontent.com/file/6e3be504f08f88a15a28a9a447d94d3d' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/b8348201b4611fc3315b82765d35fc63' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/0b3014da32de48c03340a4e4154328f6' alt=''/>
+                        </Link>
+                      </li>
+                      <li className='customer-thanhtoan2-1'>
+                        <Link className='customer-thanhtoan2-1-1'>
+                          <img src='https://down-vn.img.susercontent.com/file/vn-50009109-ec3ae587db6309b791b78eb8af6793fd' alt=''/>
                         </Link>
                       </li>
                     </ul>

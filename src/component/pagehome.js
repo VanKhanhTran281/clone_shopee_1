@@ -1,14 +1,18 @@
 import {useEffect,useState} from 'react'
-import { BrowserRouter, Routes, Route ,Link} from "react-router-dom";
+import { BrowserRouter, Routes, Route ,Link,useNavigate,useParams} from "react-router-dom";
 import data from './data'
 import './dep.css'
 
 function ProductHome({products}){
-
+  const navigate=useNavigate();
+  // const { itemid } = useParams();
+  const handleShowDetails=(itemid)=>{
+    navigate(`/details/${itemid}`);
+  }
 return(
     <>
        {products.map(pro=>(
-          <li className="shopee-search-item-result__item" data-sqe="item" key={pro.item_basic.itemid}>
+          <li className="shopee-search-item-result__item" data-sqe="item" key={pro.item_basic.itemid} onClick={()=>handleShowDetails(pro.item_basic.itemid)} >
                     <Link style={{textDecoration: 'none'}} data-sqe="link" href="/JOFANNY-dép-nam-nữ-cánh-hoa-chống-trượt-quai-ngang-bánh-mì-nữ-bốn-màu-tùy-chọn-đế-cao-3cm-i.966414535.20878379471?sp_atk=98f10986-3276-4990-9554-ccd244603a81&amp;xptdk=98f10986-3276-4990-9554-ccd244603a81">
                       <div className="tWpFe2">
                         <div className="VTjd7p whIxGK">
