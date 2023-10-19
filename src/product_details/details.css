@@ -109,6 +109,7 @@ position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -15px;
 }
 .details-share{
     padding: 0 30px;
@@ -129,10 +130,154 @@ position: relative;
     background-color: initial;
     border: 0;
     display: flex;
-    -webkit-appearance: button;
     cursor: pointer;
 }
 .details-love1-1{
     font-size: 16px;
     color: #222;font-size: 18px;
+}
+.details-content2-pro-content{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem 2.1875rem 0 1.25rem;
+    flex: 1 1 auto;
+}
+.details-pro-content1{
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-weight: 500;
+    margin: 0;
+    vertical-align: sub;
+    max-height: 3rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+    max-width: 41.5625rem;
+    font-size: 1.25rem;
+    overflow-wrap: break-word;
+}
+.details-pro-content1-1{
+    font-size: .75rem;
+    vertical-align: middle;
+    position: relative;
+    margin-right: 10px;
+    border-radius: 2px;
+    display: inline-flex;
+    transform: translateY(-.125rem);
+    align-items: center;
+    padding: .1875rem .25rem;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: default;
+    user-select: none;
+    background-color: #ee4d2d;
+}
+.details-pro-content1-2{
+    font-size: 1.25rem;
+    overflow-wrap: break-word;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+.details-pro-content2{
+    margin-top: .625rem;
+    position: relative;
+    display: flex;
+}
+.details-pro-content2-button1{
+
+}
+.details-pro-content2-button2{
+    background-color: initial;
+    border: 0;
+    cursor: pointer;
+    align-items: center;
+    padding: 0 15px;
+    display: flex;
+}
+.details-pro-content2-button2:not(:first-child){
+    border-left: 1px solid rgba(0,0,0,.14);
+}
+    .details-pro-content2-button2-1{
+        font-size: 1rem;
+        color: #222;
+        margin-right: 5px;
+        padding-bottom: 1px;
+        border-bottom: 1px solid #555;
+    }
+    .details-pro-content2-button2-2{
+        font-size: .875rem;
+        color: #767676;
+        text-transform: capitalize;
+        padding: 4px 0;
+        margin-right: 5px;
+    }
+
+
+.details-pro-content2-div{
+    align-items: center;
+    padding: 0 15px;
+    display: flex;
+}
+/* Có gạch mờ ở giữa 2 phần tử */
+.details-pro-content2-div:not(:first-child){
+    border-left: 1px solid rgba(0,0,0,.14);
+}
+    .details-pro-content2-div1{
+        font-size: 1rem;
+        color: #222;
+        margin-right: 5px;
+        padding-bottom: 1px;
+    }
+.details-pro-content2-button3{
+    border: unset;
+    background: none;
+    color: rgba(0,0,0,.54);
+    font-size: 14px;
+    margin-left: auto;
+}
+.details-pro-content5-button1{
+    flex-direction: row;
+    position: relative;
+    overflow: visible;
+    outline: 0;
+    background: rgba(255,87,34,0.1);
+    color: #ee4d2d;
+    border: 1px solid #ee4d2d;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.03);
+    max-width: 250px;
+    height: 48px;
+    padding: 0 20px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+}
+.details-pro-content5-button2{
+    color: #fff;
+    position: relative;
+    overflow: visible;
+    outline: 0;
+    background: #ee4d2d;
+    height: 48px;
+    padding: 0 50px;
+    max-width: 250px;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.09);
+    border-radius: 2px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    margin-left: 15px;
 }

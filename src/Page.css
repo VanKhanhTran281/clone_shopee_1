@@ -36,7 +36,7 @@
     width: 1em;
     height: 1em;
     fill: currentColor;
-    position: relative;
+    /* position: relative; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -116,6 +116,62 @@
     font: inherit;
     margin: 0;
 }
+/* Phần tìm kiếm theo khoảng giá */
+.shopee-price-range-filter__inputs{
+    margin: 2rem 0 0.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shopee-price-range-filter__input{
+    width: 5rem;
+    font-size: .75rem;
+    height: 1.875rem;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.26);
+    box-sizing: border-box;
+    padding-left: .3125rem;
+    border-radius: .125rem;
+    box-shadow: inset 0 1px 0 0 rgba(0,0,0,.05);
+
+}
+.shopee-price-range-filter__range-line{
+    flex: 1;
+    height: 1px;
+    background: #bdbdbd;
+    margin: 0 .625rem;
+}
+.button-ad{
+    height: 1.875rem;
+    margin: 1.25rem 0 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+    outline: 0;
+    background: #ee4d2d;
+    cursor: pointer;
+    border: 0;
+    font-size: .875rem;
+    line-height: 1;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.54);
+    color: #fff;
+    transition: opacity .2s ease;
+    border-radius: 2px;
+    -moz-user-select: none;
+    user-select: none;
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.09);
+}
+
+
+
+
 .shopee-header-section__header__title{
     font-size: 1rem;
     color: rgba(0,0,0,.54);
@@ -132,7 +188,7 @@
     display: flex;
     align-items: center;
     color:#ee4d2d;
-    position: relative;
+    /* position: relative; */
     overflow: visible;
     outline: 0;
     padding: 0.3125rem 0.4375rem;
@@ -149,7 +205,7 @@
 
     cursor: pointer;
     user-select: none;
-    position: relative;
+    /* position: relative; */
     background-color: #fff;
     height: 7.5rem;
     padding: 0 1.5625rem;
@@ -165,7 +221,7 @@
     text-decoration: none;
     color: rgba(0,0,0,.87);
     display: block;
-    position: relative;
+    /* position: relative; */
 }
 .shopee-avatar{
     width: 4.375rem;

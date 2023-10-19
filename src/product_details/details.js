@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
@@ -14,6 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import PinterestIcon from '@mui/icons-material/Pinterest';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const Details = () => {
     const { itemid } = useParams();
@@ -43,7 +44,7 @@ const Details = () => {
                 </div>
 
                 <div className='shopee-searchbar'>
-                    <form className="shopee-searchbar-input" autocomplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <form className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', alignItems: "center" }}>
                             <Link to='/' style={{ color: '#fff', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
                                 <LocalMallIcon style={{ fontSize: '50' }}>
@@ -72,7 +73,28 @@ const Details = () => {
                             </div>
 
                         </div>
-                        <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} />
+                        <div >
+                            <div className='product-shopping-main'>
+                                {/* <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} /> */}
+                                <svg style={{ color: '#fff' }} width="30" height="30" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 
+                                        0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 
+                                        0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                {/* <div aria-describedby="cart_drawer_target_id" role="tooltip" aria-hidden="false" className="product-shopping" style={{ top: '92px', right: '233px', transformOrigin: '381.1px top' }}>
+                                    <div className="product-shopping1" style={{ top: '1px', left: '381.1px', transform: 'translate(-7px, -100%)', borderBottom: '10px solid rgba(0, 0, 0, 0.09)', borderLeft: '0px solid transparent', borderRight: '0px solid transparent' }}>
+                                        <div className="product-shopping1-1" style={{ borderBottom: '10px solid rgb(255, 255, 255)', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', bottom: '-10px' }}>
+                                        </div>
+                                    </div>
+                                    <div className="product-shopping2">
+                                        <div className="product-shopping2-1">
+                                            <img className="product-shopping2-1-1" src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png' alt='' />
+                                            <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
+                                        </div>
+                                    </div>
+                                </div> */}
+                            </div>
+                        </div>
                     </form>
 
                 </div>
@@ -118,18 +140,18 @@ const Details = () => {
                                 <span className='details-content1-3'>{item.item_basic.name}</span>
                             </div>
                             <section className='details-content2'>
-                                <h1 className='details-content2-text'>{item.item_basic.name}</h1>
+                                {/* <h1 className='details-content2-text'>{item.item_basic.name}</h1> */}
                                 <div></div>
                                 <section className='details-content2-img'>
-                                    <h2 className='details-content2-text'>Product Image Section</h2>
+                                    {/* <h2 className='details-content2-text'>Product Image Section</h2> */}
                                     <div className='details-img'>
                                         <div className='details-img1'>
                                             <div className='details-img1-1'>
                                                 <div className='details-img1-1-1'></div>
                                                 <div className='details-img1-1-2'>
                                                     <picture>
-                                                      <img alt=""
-                                                       className='details-img1-1-2-1'  src={`https://down-vn.img.susercontent.com/file/${item.item_basic.image}`} />
+                                                        <img alt=""
+                                                            className='details-img1-1-2-1' src={`https://down-vn.img.susercontent.com/file/${item.item_basic.image}`} />
                                                     </picture>
                                                 </div>
                                             </div>
@@ -141,21 +163,74 @@ const Details = () => {
                                     </div>
                                     <div className='details-like'>
                                         <div className='details-share'>
-                                            <div style={{fontSize:'16px',color:'#222'}}>Chia sẻ:</div>
-                                            <button style={{ border:'transparent',marginLeft:'5px',backgroundColor:'#4489ee',position:'relative' ,width:'30px',height:'30px',borderRadius:'50%'}}><GitHubIcon style={{color:'#fff'}}/></button>
-                                            <button style={{ border:'transparent',marginLeft:'5px',backgroundColor:'#365d7a',position:'relative' ,width:'30px',height:'30px',borderRadius:'50%'}}><FacebookIcon style={{color:'#fff'}}/></button>
-                                            <button style={{ border:'transparent',marginLeft:'5px',backgroundColor:'red',position:'relative' ,width:'30px',height:'30px',borderRadius:'50%'}}><PinterestIcon style={{color:'#fff'}}/></button>
-                                            <button style={{ border:'transparent',marginLeft:'5px',backgroundColor:'#4489ee',position:'relative' ,width:'30px',height:'30px',borderRadius:'50%'}}><TwitterIcon style={{color:'#fff'}}/></button>
+                                            <div style={{ fontSize: '16px', color: '#222' }}>Chia sẻ:</div>
+                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#4489ee', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><GitHubIcon style={{ color: '#fff' }} /></button>
+                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#365d7a', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><FacebookIcon style={{ color: '#fff' }} /></button>
+                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: 'red', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><PinterestIcon style={{ color: '#fff' }} /></button>
+                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#4489ee', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><TwitterIcon style={{ color: '#fff' }} /></button>
                                         </div>
                                         <div className='details-love'>
                                             <button className='details-love1' >
-                                                <FavoriteBorderIcon style={{marginRight:'10px', fontSize:'30px' ,color:'red'}}/>
+                                                <FavoriteBorderIcon style={{ marginRight: '10px', fontSize: '30px', color: 'red' }} />
                                                 <div className='details-love1-1'>Đã thích({item.item_basic.liked_count})</div>
                                             </button>
                                         </div>
                                     </div>
                                 </section>
-                                <section className='details-content2-pro'></section>
+                                <section className='details-content2-pro'>
+                                    <div className='details-content2-pro-content'>
+                                        <div className='details-pro-content1'>
+                                            <div className='details-pro-content1-1'>Yêu thích</div>
+                                            <span className='details-pro-content1-2'>{item.item_basic.name}</span>
+                                        </div>
+                                        <div className='details-pro-content2'>
+                                            <button className='details-pro-content2-button1'></button>
+                                            <button className='details-pro-content2-button2'>
+                                                <div className='details-pro-content2-button2-1'>{item.item_basic.cmt_count}</div>
+                                                <div className='details-pro-content2-button2-2'>Đánh giá</div>
+                                            </button>
+                                            <div className='details-pro-content2-div'>
+                                                <div className='details-pro-content2-div1'>{item.item_basic.historical_sold}</div>
+                                                <div className='details-pro-content2-button2-2'>Đã bán</div>
+                                            </div>
+                                            <button className='details-pro-content2-button3'>Tố cáo</button>
+                                        </div>
+                                        <div className='details-pro-content3' style={{ marginTop: '10px' }}>
+                                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                <div style={{ padding: '15px 20px', background: '#fafafa' }}>
+                                                    <section style={{ display: 'flex', alignItems: 'center' }}>
+                                                        <div style={{ display: 'flex', flexDirection: 'column', flexWrap: 'wrap', width: '625px', flexBasis: '625px', minHeight: '1.875rem' }}>
+                                                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                                                <div style={{ fontSize: '1.875rem', fontWeight: '500', color: '#ee4d2d' }}>₫{item.item_basic.price / 100000}</div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='details-pro-content4'></div>
+                                        <div className='details-pro-content5' style={{ marginTop: '15px' }}>
+                                            <div style={{ paddingLeft: '1.25rem' }}>
+                                                <div style={{ display: 'flex' }}>
+                                                    <button className='details-pro-content5-button1'>
+                                                        <AddShoppingCartIcon />
+                                                        <span>thêm vào giỏ hàng</span>
+                                                    </button>
+                                                    <button className='details-pro-content5-button2'>Mua Ngay</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='details-pro-content6'>
+                                            <div>
+                                                <Link>
+                                                    <img src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/83e10a1f95cb083579c089448ef8dd3b.png' alt='' />
+                                                    <span>Shopee Đảm Bảo</span>
+                                                    <span>3 Ngày Trả Hàng/ Hoàn Tiền</span>
+                                                </Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                             </section>
                         </div>
                     )}
@@ -194,7 +269,7 @@ const Details = () => {
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Bán Hàng</span></Link></li>
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Thanh Toán</span></Link></li>
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Xu</span></Link></li>
-                                    <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận CHUYỂN</span></Link></li>
+                                    <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận Chuyển</span></Link></li>
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trả Hàng & Hoàn Tiền</span></Link></li>
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chăm Sóc Khách Hàng</span></Link></li>
                                     <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Hành</span></Link></li>

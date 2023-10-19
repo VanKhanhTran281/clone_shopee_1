@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
-import Home from './Home';
+// import Home from './Home';
 import './App.css'
 import './Page.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-import SvgIcon from '@mui/material/SvgIcon';
+// import SvgIcon from '@mui/material/SvgIcon';
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import 'bootstrap/dist/css/bootstrap.css';
-import Product from './component/dep';
+// import Product from './component/dep';
 import ProductHome from './component/pagehome'
 import data from './component/data';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
@@ -89,7 +89,7 @@ const Page = () => {
   }
   // Search
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredProducts, setFilteredProducts] = useState(products);
+  // const [filteredProducts, setFilteredProducts] = useState(products);
 
   const handleSearch = () => {
     if (searchTerm.length > 0) {
@@ -137,7 +137,7 @@ const Page = () => {
         </div>
 
         <div className='shopee-searchbar'>
-          <form className="shopee-searchbar-input" autocomplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <form className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: "center" }}>
               <Link to='/' style={{ color: '#fff', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
                 <LocalMallIcon style={{ fontSize: '50' }}>
@@ -167,7 +167,28 @@ const Page = () => {
               </div>
 
             </div>
-            <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} />
+            <div >
+              <div className='product-shopping-main'>
+                {/* <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} /> */}
+                <svg style={{ color: '#fff' }} width="30" height="30" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
+                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 
+                       0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 
+                       0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                </svg>
+                <div aria-describedby="cart_drawer_target_id" role="tooltip" aria-hidden="false" className="product-shopping" style={{top: '92px',right :'233px', transformOrigin: '381.1px top' }}>
+                  <div className="product-shopping1" style={{ top: '1px', left: '381.1px', transform: 'translate(-7px, -100%)', borderBottom: '10px solid rgba(0, 0, 0, 0.09)', borderLeft: '0px solid transparent', borderRight: '0px solid transparent' }}>
+                    <div className="product-shopping1-1" style={{ borderBottom: '10px solid rgb(255, 255, 255)', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', bottom: '-10px' }}>
+                    </div>
+                  </div>
+                  <div className="product-shopping2">
+                    <div className="product-shopping2-1">
+                      <img className="product-shopping2-1-1" src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png' alt=''/>
+                      <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </form>
 
         </div>
@@ -184,7 +205,7 @@ const Page = () => {
               <div className='page-contents-container-filter-status'>
                 <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon">
                   <g><polyline fill="none" points="5.5 13.2 5.5 5.8 1.5 1.2 13.5 1.2 9.5 5.8 9.5 10.2"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline>
+                    strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline>
                   </g>
                 </svg>
                 <h2 className="shopee-search-filter-status__text">Bộ lọc tìm kiếm<span class="sr-only"></span></h2>
@@ -230,13 +251,13 @@ const Page = () => {
                 </button>
               </fieldset>
               <fieldset className="shopee-filter-group shopee-facet-filter">
-                <legend className="shopee-filter-group__header">Nơi bán</legend>
+                <legend className="shopee-filter-group__header">Nơi Bán</legend>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
                     <div className="shopee-checkbox__box">
                       <input type="checkbox" name="nuocngoai" value="Nước Ngoài" checked={selectedLocations.includes('Nước Ngoài')} onChange={handleCheckboxChange} />
                     </div>
-                    <span className="shopee-checkbox__label">Nước ngoài</span>
+                    <span className="shopee-checkbox__label">Nước Ngoài</span>
                   </label></div>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
@@ -269,6 +290,136 @@ const Page = () => {
                   </svg>
                 </button>
               </fieldset>
+              <fieldset className="shopee-filter-group shopee-facet-filter">
+                <legend className="shopee-filter-group__header">Đơn Vị Vận Chuyển</legend>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Hỏa Tốc</span>
+                  </label></div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Nhanh </span>
+                  </label>
+                </div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Tiết Kiệm</span>
+                  </label>
+                </div>
+                <button aria-expanded="false" className="shopee-filter-group__toggle-btn" aria-label="">Thêm
+                  <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down">
+                    <g>
+                      <path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
+                    </g>
+                  </svg>
+                </button>
+              </fieldset>
+              <fieldset className="shopee-filter-group ">
+                <legend className="shopee-filter-group__header">Thương Hiệu</legend>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Wika</span>
+                  </label></div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Vento</span>
+                  </label>
+                </div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Kokubo</span>
+                  </label>
+                </div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div><span className="shopee-checkbox__label">GUMEN</span>
+                  </label>
+                </div>
+                <button aria-expanded="false" className="shopee-filter-group__toggle-btn" aria-label="">Thêm
+                  <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down">
+                    <g>
+                      <path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
+                    </g>
+                  </svg>
+                </button>
+              </fieldset>
+              {/* Tìm sản phẩm theo giá */}
+              <fieldset className="shopee-filter-group " style={{padding:'0 0 1.25rem'}}>
+                <legend className="shopee-filter-group__header">Khoảng Giá</legend>
+                <div className="">
+                  <div className="shopee-price-range-filter__inputs">
+                    <input type="text" aria-label="" maxLength="13" className="shopee-price-range-filter__input" placeholder="₫ TỪ" value=""/>
+                    <div className="shopee-price-range-filter__range-line"></div>
+                    <input type="text" aria-label="" maxLength="13" className="shopee-price-range-filter__input" placeholder="₫ ĐẾN" value=""/>
+                  </div>
+                </div>
+                <button class="button-ad" aria-label="" style={{backgroundColor: 'rgb(238, 77, 45)'}}>Áp dụng</button>
+              </fieldset>
+              <fieldset className="shopee-filter-group ">
+                <legend className="shopee-filter-group__header">Loại Shop</legend>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Shopee Mall</span>
+                  </label></div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Shop Yêu Thích</span>
+                  </label>
+                </div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Shop Yêu Thích +</span>
+                  </label>
+                </div>
+              </fieldset>
+              <fieldset className="shopee-filter-group ">
+                <legend className="shopee-filter-group__header">Tình Trạng</legend>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Đã Sử Dụng</span>
+                  </label>
+                </div>
+                <div className="shopee-filter shopee-checkbox-filter">
+                  <label className="shopee-checkbox">
+                    <div className="shopee-checkbox__box">
+                      <input type="checkbox" />
+                    </div>
+                    <span className="shopee-checkbox__label">Mới</span>
+                  </label>
+                </div>
+              </fieldset>
             </div>
 
 
@@ -299,7 +450,7 @@ const Page = () => {
                             <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-headshot">
                               <g>
                                 <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10">
+                                <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" strokeLinecap="round" stroke-miterlimit="10">
                                 </path>
                               </g>
                             </svg>
@@ -310,7 +461,7 @@ const Page = () => {
                               <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-headshot">
                                 <g>
                                   <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                  <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
+                                  <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" strokeLinecap="round" stroke-miterlimit="10"></path>
                                 </g>
                               </svg>
                             </div>
@@ -336,8 +487,8 @@ const Page = () => {
                               <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
                                 <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-products">
                                   <g>
-                                    <path d="m10 1 4.5 2.5-.5 3h-2v7.5h-9v-7.5h-2l-.5-3 4.6-2.5c.3 1.1 1.3 1.9 2.4 1.9s2.1-.8 2.5-1.9z" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path>
-                                    <line fill="none" stroke-linecap="round" stroke-miterlimit="10" x1="3" x2="12" y1="11.5" y2="11.5"></line>
+                                    <path d="m10 1 4.5 2.5-.5 3h-2v7.5h-9v-7.5h-2l-.5-3 4.6-2.5c.3 1.1 1.3 1.9 2.4 1.9s2.1-.8 2.5-1.9z" fill="none" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10"></path>
+                                    <line fill="none" strokeLinecap="round" stroke-miterlimit="10" x1="3" x2="12" y1="11.5" y2="11.5"></line>
                                   </g></svg></div>
                               <span className="shopee-search-user-seller-info-item__primary-text">24</span>
                             </div><div className="shopee-search-user-seller-info-item__complement-text">Sản phẩm</div>
@@ -345,7 +496,7 @@ const Page = () => {
                             <div className="shopee-search-user-seller-info-item__header">
                               <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
                                 <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon icon-rating">
-                                  <polygon fill="none" points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
+                                  <polygon fill="none" points="7.5 .8 9.7 5.4 14.5 5.9 10.7 9.1 11.8 14.2 7.5 11.6 3.2 14.2 4.3 9.1 .5 5.9 5.3 5.4" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polygon>
                                 </svg></div><span className="shopee-search-user-seller-info-item__primary-text">4.9</span></div>
                             <div className="shopee-search-user-seller-info-item__complement-text">Đánh giá</div></div></div>
                         <div className="shopee-search-user-seller-info-item"><div className="shopee-search-user-seller-info-item__wrapper">
@@ -361,7 +512,7 @@ const Page = () => {
                               <div aria-hidden="true" className="shopee-search-user-seller-info-item__icon">
                                 <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" className="shopee-svg-icon">
                                   <g>
-                                    <polyline fill="none" points="7.2 3.5 7.2 7.8 10.5 7.8" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline>
+                                    <polyline fill="none" points="7.2 3.5 7.2 7.8 10.5 7.8" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10"></polyline>
                                     <circle cx="7.5" cy="7.5" fill="none" r="6.5" stroke-miterlimit="10"></circle>
                                   </g></svg></div><span className="shopee-search-user-seller-info-item__primary-text">trong vài giờ</span>
                             </div><div className="shopee-search-user-seller-info-item__complement-text">thời gian phản hồi</div>
@@ -481,7 +632,7 @@ const Page = () => {
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Bán Hàng</span></Link></li>
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Thanh Toán</span></Link></li>
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Xu</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận CHUYỂN</span></Link></li>
+                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận Chuyển</span></Link></li>
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trả Hàng & Hoàn Tiền</span></Link></li>
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chăm Sóc Khách Hàng</span></Link></li>
                   <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Hành</span></Link></li>
