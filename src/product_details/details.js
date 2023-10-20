@@ -15,10 +15,19 @@ import PinterestIcon from '@mui/icons-material/Pinterest';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import AddIcon from '@mui/icons-material/Add';
 
 const Details = () => {
     const { itemid } = useParams();
     const item = data.find((det) => det.item_basic.itemid == itemid);
+    const [count,setCount]=useState(0)
+    const handleSum=()=>{
+        setCount(count+1)
+    }
+    const handleRemove=()=>{
+        setCount(count-1)
+    }
     return (
         <>
             <header className='shoppee-top'>
@@ -58,7 +67,7 @@ const Details = () => {
                                 <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '840px', borderRadius: '5px' }} />
                                 <button className='button-search' style={{ border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
                             </div>
-                            <div class="" style={{ fontSize: '12px' }}>
+                            <div className="" style={{ fontSize: '12px' }}>
                                 <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='/page'>Dép 1k</Link>
                                 <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='/page'>Áo 1k</Link>
                                 <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='/page'>Set Kẹp Tóc</Link>
@@ -74,14 +83,14 @@ const Details = () => {
 
                         </div>
                         <div >
-                            <div className='product-shopping-main'>
+                            <div className='product-shopping-main' style={{ padding: '10px 0' }}>
                                 {/* <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} /> */}
                                 <svg style={{ color: '#fff' }} width="30" height="30" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 
                                         0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 
                                         0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                                 </svg>
-                                {/* <div aria-describedby="cart_drawer_target_id" role="tooltip" aria-hidden="false" className="product-shopping" style={{ top: '92px', right: '233px', transformOrigin: '381.1px top' }}>
+                                <div aria-describedby="cart_drawer_target_id" role="tooltip" aria-hidden="false" className="product-shopping" style={{ top: '46px', right: '0px', transformOrigin: '381.1px top' }}>
                                     <div className="product-shopping1" style={{ top: '1px', left: '381.1px', transform: 'translate(-7px, -100%)', borderBottom: '10px solid rgba(0, 0, 0, 0.09)', borderLeft: '0px solid transparent', borderRight: '0px solid transparent' }}>
                                         <div className="product-shopping1-1" style={{ borderBottom: '10px solid rgb(255, 255, 255)', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', bottom: '-10px' }}>
                                         </div>
@@ -92,7 +101,7 @@ const Details = () => {
                                             <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
                                         </div>
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </form>
@@ -118,22 +127,22 @@ const Details = () => {
                         <div className='details-content'>
                             <div className='details-content1'>
                                 <Link className='details-content1-1'>Shopee</Link>
-                                <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
+                                <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
                                     <path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z">
                                     </path>
                                 </svg>
                                 <Link className='details-content1-1'>Men Shoes</Link>
-                                <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
+                                <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
                                     <path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z">
                                     </path>
                                 </svg>
                                 <Link className='details-content1-1'>Sandals & Flip Flops</Link>
-                                <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
+                                <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
                                     <path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z">
                                     </path>
                                 </svg>
                                 <Link className='details-content1-1'>Indoor Slippers</Link>
-                                <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
+                                <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" className='details-content1-2'>
                                     <path d="m2.5 11c .1 0 .2 0 .3-.1l6-5c .1-.1.2-.3.2-.4s-.1-.3-.2-.4l-6-5c-.2-.2-.5-.1-.7.1s-.1.5.1.7l5.5 4.6-5.5 4.6c-.2.2-.2.5-.1.7.1.1.3.2.4.2z">
                                     </path>
                                 </svg>
@@ -208,7 +217,55 @@ const Details = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='details-pro-content4'></div>
+                                        <div className='details-pro-content4'>
+                                            <div className='details-pro-content4-1'>
+                                                <div className='details-pro-content4-1-1'></div>
+                                                <div className='details-pro-content4-1-2'>
+                                                    <div className='details-pro-content4-1-2-1'>
+                                                        {item.item_basic.tier_variations &&
+                                                            item.item_basic.tier_variations.map((variation, index) => (
+                                                                <section className="details-pro-content4-1-2-1-section1" key={index}>
+                                                                    <h3 className="details-pro-content4-1-2-1-section1-1">{variation.name}</h3>
+                                                                    {variation.options && variation.options.length > 0 && (
+                                                                        <div className="details-pro-content4-1-2-1-section1-2">
+                                                                            {variation.options.map((option, optionIndex) => (
+                                                                                <button
+                                                                                    className="details-pro-content4-1-2-1-section1-2-1"
+                                                                                    // Sử dụng padding -left để cho ảnh và tên của options ko đè lên nhau
+                                                                                    key={optionIndex} style={{ paddingLeft: '2.5rem' }}
+                                                                                >
+
+                                                                                    {index === 0 && variation.images && variation.images.length > 0 && (
+                                                                                        <img
+                                                                                            className="details-pro-content4-1-2-1-section1-2-1-1"
+                                                                                            src={`https://down-vn.img.susercontent.com/file/${variation.images[optionIndex]}`}
+                                                                                            alt={option}
+                                                                                        />
+                                                                                    )}
+                                                                                    {option}
+                                                                                </button>
+                                                                            ))}
+                                                                        </div>
+                                                                    )}
+                                                                </section>
+                                                            ))}
+                                                        <section className='details-pro-content4-1-2-1-section2'>
+                                                            <h3 className="details-pro-content4-1-2-1-section1-1">Số Lượng</h3>
+                                                            <div className='details-pro-content4-1-2-1-section2-2'>
+                                                                <div style={{marginRight:'15px'}}>
+                                                                    <div style={{display:'flex',alignItems:'center',background:'#fff'}}>
+                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleRemove}><HorizontalRuleIcon/></button>
+                                                                        <button className='details-pro-content4-1-2-1-section2-2-button2'>{count}</button>
+                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleSum}><AddIcon/></button>
+                                                                    </div>
+                                                                </div>
+                                                                <div>{item.item_basic.stock} sản phẩm có sẵn</div>
+                                                            </div>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div className='details-pro-content5' style={{ marginTop: '15px' }}>
                                             <div style={{ paddingLeft: '1.25rem' }}>
                                                 <div style={{ display: 'flex' }}>
@@ -221,11 +278,11 @@ const Details = () => {
                                             </div>
                                         </div>
                                         <div className='details-pro-content6'>
-                                            <div>
-                                                <Link>
-                                                    <img src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/83e10a1f95cb083579c089448ef8dd3b.png' alt='' />
-                                                    <span>Shopee Đảm Bảo</span>
-                                                    <span>3 Ngày Trả Hàng/ Hoàn Tiền</span>
+                                            <div className='details-pro-content6-1'>
+                                                <Link className='details-pro-content6-1-1'>
+                                                    <img className='details-pro-content6-1-1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/83e10a1f95cb083579c089448ef8dd3b.png' alt='' />
+                                                    <span className='details-pro-content6-1-1-2'>Shopee Đảm Bảo</span>
+                                                    <span className='details-pro-content6-1-1-3'>3 Ngày Trả Hàng/ Hoàn Tiền</span>
                                                 </Link>
                                             </div>
                                         </div>
