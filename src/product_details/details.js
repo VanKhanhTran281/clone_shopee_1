@@ -21,13 +21,132 @@ import AddIcon from '@mui/icons-material/Add';
 const Details = () => {
     const { itemid } = useParams();
     const item = data.find((det) => det.item_basic.itemid == itemid);
-    const [count,setCount]=useState(0)
-    const handleSum=()=>{
-        setCount(count+1)
+
+    // Hàm xử lý phần số lượng sản phẩm đặt mua
+    const [count, setCount] = useState(1)
+    const handleSum = () => {
+        setCount(count + 1)
     }
-    const handleRemove=()=>{
-        setCount(count-1)
+    const handleRemove = () => {
+        if (count > 1) {
+            setCount(count - 1);
+        }
     }
+
+    //Hàm xử lý sự kiện đổi màu  
+    const [color, setColor] = useState('rgba(0, 0, 0, .09)');
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState(null);
+
+    const handleClickbt = (optionIndex) => {
+        if (selectedOptionIndex === optionIndex) {
+            setSelectedOptionIndex(null);
+            setColor('rgba(0, 0, 0, .09)'); // Đặt lại màu viền ban đầu
+        } else {
+            setSelectedOptionIndex(optionIndex);
+            // console.log(optionIndex)
+            setColor('red');
+        }
+    };
+
+
+    // Xử lý phần mua hàng
+    // Không lưu dữ liệu khi tải lại trang
+    // const [itemAdded, setItemAdded] = useState(false);
+    // const [productName, setProductName] = useState('');
+    // const [productPrice, setProductPrice] = useState('');
+    // // const [variationName, setVariationName] = useState('');
+    // const [variationImage, setVariationImage] = useState('');
+    // const handleAddToCart = () => {
+    //     setItemAdded(true);
+    //     setProductName(item.item_basic.name);
+    //     setProductPrice(item.item_basic.price / 100000);
+    //     if (item.item_basic.tier_variations && item.item_basic.tier_variations.length > 0) {
+    //         const firstVariation = item.item_basic.tier_variations[0];
+    //         if (firstVariation.images && firstVariation.images.length > 0) {
+    //             const firstImage = firstVariation.images[selectedOptionIndex];
+    //             setVariationImage(firstImage);
+    //         }
+    //     }
+
+    // }
+    // // console.log(variationImage)
+    // const handleReset = () => {
+    //     setItemAdded(false);
+    //     setProductName('');
+    //     setProductPrice('');
+    //     setVariationImage('')
+    // };
+
+
+    // Lưu dữ liệu vào localStorage
+    const [itemAdded, setItemAdded] = useState(false);
+    const [productName, setProductName] = useState('');
+    const [productPrice, setProductPrice] = useState('');
+    const [variationImage, setVariationImage] = useState('');
+
+    useEffect(() => {
+        // Khôi phục dữ liệu từ localStorage khi component được tạo
+        const storedItemAdded = localStorage.getItem('itemAdded');
+        const storedProductName = localStorage.getItem('productName');
+        const storedProductPrice = localStorage.getItem('productPrice');
+        const storedVariationImage = localStorage.getItem('variationImage');
+
+        if (storedItemAdded) {
+            setItemAdded(JSON.parse(storedItemAdded));
+        }
+
+        if (storedProductName) {
+            setProductName(storedProductName);
+        }
+
+        if (storedProductPrice) {
+            setProductPrice(storedProductPrice);
+        }
+
+        if (storedVariationImage) {
+            setVariationImage(storedVariationImage);
+        }
+    }, []);
+
+    const handleAddToCart = () => {
+        setItemAdded(true);
+        setProductName(item.item_basic.name);
+        setProductPrice(item.item_basic.price / 100000);
+        if (item.item_basic.tier_variations && item.item_basic.tier_variations.length > 0) {
+            const firstVariation = item.item_basic.tier_variations[0];
+            if (firstVariation.images && firstVariation.images.length > 0) {
+                const firstImage = firstVariation.images[selectedOptionIndex];
+                setVariationImage(firstImage);
+            }
+        }
+
+        // Lưu dữ liệu vào localStorage
+        localStorage.setItem('itemAdded', JSON.stringify(true));
+        localStorage.setItem('productName', item.item_basic.name);
+        localStorage.setItem('productPrice', item.item_basic.price / 100000);
+        if (item.item_basic.tier_variations && item.item_basic.tier_variations.length > 0) {
+            const firstVariation = item.item_basic.tier_variations[0];
+            if (firstVariation.images && firstVariation.images.length > 0) {
+                const firstImage = firstVariation.images[selectedOptionIndex];
+                localStorage.setItem('variationImage', firstImage);
+            }
+        }
+    };
+
+    const handleReset = () => {
+        setItemAdded(false);
+        setProductName('');
+        setProductPrice('');
+        setVariationImage('');
+
+        // Xóa dữ liệu từ localStorage
+        localStorage.removeItem('itemAdded');
+        localStorage.removeItem('productName');
+        localStorage.removeItem('productPrice');
+        localStorage.removeItem('variationImage');
+    };
+
+
     return (
         <>
             <header className='shoppee-top'>
@@ -95,12 +214,30 @@ const Details = () => {
                                         <div className="product-shopping1-1" style={{ borderBottom: '10px solid rgb(255, 255, 255)', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', bottom: '-10px' }}>
                                         </div>
                                     </div>
-                                    <div className="product-shopping2">
-                                        <div className="product-shopping2-1">
-                                            <img className="product-shopping2-1-1" src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png' alt='' />
-                                            <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
+                                    {!itemAdded ? (
+                                        <div className="product-shopping2">
+                                            <div className="product-shopping2-1">
+                                                <img
+                                                    className="product-shopping2-1-1"
+                                                    src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/9bdd8040b334d31946f49e36beaf32db.png"
+                                                    alt=""
+                                                />
+                                                <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    ) : (
+                                        <div className="product-shopping2">
+                                            <div className="product-shopping2-1">
+                                                <img className="product-shopping2-1-1" src={`https://down-vn.img.susercontent.com/file/${variationImage}`} alt="" />
+                                                <div className="product-shopping2-1-2">
+                                                    <div>{productName}</div>
+                                                    <div style={{ color: 'rgb(238, 77, 45)' }}>₫{productPrice}</div>
+                                                    {/* Add other relevant information */}
+                                                    <button onClick={handleReset}>Trở lại</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -231,10 +368,10 @@ const Details = () => {
                                                                             {variation.options.map((option, optionIndex) => (
                                                                                 <button
                                                                                     className="details-pro-content4-1-2-1-section1-2-1"
-                                                                                    // Sử dụng padding -left để cho ảnh và tên của options ko đè lên nhau
-                                                                                    key={optionIndex} style={{ paddingLeft: '2.5rem' }}
+                                                                                    key={optionIndex}
+                                                                                    style={{ paddingLeft: '2.5rem', border: optionIndex === selectedOptionIndex ? '1px solid red' : '1px solid rgba(0, 0, 0, .09)' }}
+                                                                                    onClick={() => handleClickbt(optionIndex)}
                                                                                 >
-
                                                                                     {index === 0 && variation.images && variation.images.length > 0 && (
                                                                                         <img
                                                                                             className="details-pro-content4-1-2-1-section1-2-1-1"
@@ -252,11 +389,11 @@ const Details = () => {
                                                         <section className='details-pro-content4-1-2-1-section2'>
                                                             <h3 className="details-pro-content4-1-2-1-section1-1">Số Lượng</h3>
                                                             <div className='details-pro-content4-1-2-1-section2-2'>
-                                                                <div style={{marginRight:'15px'}}>
-                                                                    <div style={{display:'flex',alignItems:'center',background:'#fff'}}>
-                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleRemove}><HorizontalRuleIcon/></button>
+                                                                <div style={{ marginRight: '15px' }}>
+                                                                    <div style={{ display: 'flex', alignItems: 'center', background: '#fff' }}>
+                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleRemove}><HorizontalRuleIcon /></button>
                                                                         <button className='details-pro-content4-1-2-1-section2-2-button2'>{count}</button>
-                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleSum}><AddIcon/></button>
+                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleSum}><AddIcon /></button>
                                                                     </div>
                                                                 </div>
                                                                 <div>{item.item_basic.stock} sản phẩm có sẵn</div>
@@ -269,7 +406,7 @@ const Details = () => {
                                         <div className='details-pro-content5' style={{ marginTop: '15px' }}>
                                             <div style={{ paddingLeft: '1.25rem' }}>
                                                 <div style={{ display: 'flex' }}>
-                                                    <button className='details-pro-content5-button1'>
+                                                    <button className='details-pro-content5-button1' onClick={handleAddToCart}>
                                                         <AddShoppingCartIcon />
                                                         <span>thêm vào giỏ hàng</span>
                                                     </button>
