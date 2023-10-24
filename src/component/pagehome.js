@@ -9,6 +9,7 @@ function ProductHome({products}){
   const handleShowDetails=(itemid)=>{
     navigate(`/details/${itemid}`);
   }
+  
 return(
     <>
        {products.map(pro=>(

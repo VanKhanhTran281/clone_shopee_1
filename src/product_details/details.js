@@ -134,7 +134,6 @@ const Details = () => {
         return prooducts.some((product) => product.variationImage === image);
     };
 
-
     return (
         <>
             <header className='shoppee-top'>
