@@ -79,71 +79,59 @@ const Details = () => {
 
 
     // Lưu dữ liệu vào localStorage
-    const [itemAdded, setItemAdded] = useState(false);
-    const [productName, setProductName] = useState('');
-    const [productPrice, setProductPrice] = useState('');
-    const [variationImage, setVariationImage] = useState('');
+    const [prooducts, setProoducts] = useState([]);
 
     useEffect(() => {
         // Khôi phục dữ liệu từ localStorage khi component được tạo
-        const storedItemAdded = localStorage.getItem('itemAdded');
-        const storedProductName = localStorage.getItem('productName');
-        const storedProductPrice = localStorage.getItem('productPrice');
-        const storedVariationImage = localStorage.getItem('variationImage');
+        const storedProducts = localStorage.getItem('products');
 
-        if (storedItemAdded) {
-            setItemAdded(JSON.parse(storedItemAdded));
-        }
-
-        if (storedProductName) {
-            setProductName(storedProductName);
-        }
-
-        if (storedProductPrice) {
-            setProductPrice(storedProductPrice);
-        }
-
-        if (storedVariationImage) {
-            setVariationImage(storedVariationImage);
+        if (storedProducts) {
+            setProoducts(JSON.parse(storedProducts));
         }
     }, []);
 
     const handleAddToCart = () => {
-        setItemAdded(true);
-        setProductName(item.item_basic.name);
-        setProductPrice(item.item_basic.price / 100000);
+        const newProduct = {
+            itemAdded: true,
+            productName: item.item_basic.name,
+            productPrice: item.item_basic.price / 100000,
+            variationImage: ''
+        };
+
         if (item.item_basic.tier_variations && item.item_basic.tier_variations.length > 0) {
             const firstVariation = item.item_basic.tier_variations[0];
             if (firstVariation.images && firstVariation.images.length > 0) {
                 const firstImage = firstVariation.images[selectedOptionIndex];
-                setVariationImage(firstImage);
+
+                // Kiểm tra ảnh trùng lặp
+                if (isImageDuplicate(firstImage)) {
+                    alert('Ảnh đã tồn tại trong giỏ hàng!');
+                    return;
+                }
+
+                newProduct.variationImage = firstImage;
             }
         }
 
+        const updatedProducts = [...prooducts, newProduct];
+        setProoducts(updatedProducts);
+
         // Lưu dữ liệu vào localStorage
-        localStorage.setItem('itemAdded', JSON.stringify(true));
-        localStorage.setItem('productName', item.item_basic.name);
-        localStorage.setItem('productPrice', item.item_basic.price / 100000);
-        if (item.item_basic.tier_variations && item.item_basic.tier_variations.length > 0) {
-            const firstVariation = item.item_basic.tier_variations[0];
-            if (firstVariation.images && firstVariation.images.length > 0) {
-                const firstImage = firstVariation.images[selectedOptionIndex];
-                localStorage.setItem('variationImage', firstImage);
-            }
-        }
+        localStorage.setItem('products', JSON.stringify(updatedProducts));
+
+        // Hiển thị thông báo thành công
+        alert('Thêm sản phẩm vào giỏ hàng thành công!');
     };
 
     const handleReset = () => {
-        setItemAdded(false);
-        setProductName('');
-        setProductPrice('');
-        setVariationImage('');
+        setProoducts([]);
 
         // Xóa dữ liệu từ localStorage
-        localStorage.removeItem('itemAdded');
-        localStorage.removeItem('productName');
-        localStorage.removeItem('productPrice');
-        localStorage.removeItem('variationImage');
+        localStorage.removeItem('products');
+    };
+
+    const isImageDuplicate = (image) => {
+        return prooducts.some((product) => product.variationImage === image);
     };
 
 
@@ -214,8 +202,8 @@ const Details = () => {
                                         <div className="product-shopping1-1" style={{ borderBottom: '10px solid rgb(255, 255, 255)', borderLeft: '14px solid transparent', borderRight: '14px solid transparent', bottom: '-10px' }}>
                                         </div>
                                     </div>
-                                    {!itemAdded ? (
-                                        <div className="product-shopping2">
+                                    <div className="product-shopping2">
+                                        {prooducts.length === 0 ? (
                                             <div className="product-shopping2-1">
                                                 <img
                                                     className="product-shopping2-1-1"
@@ -224,28 +212,24 @@ const Details = () => {
                                                 />
                                                 <div className="product-shopping2-1-2">Chưa có sản phẩm</div>
                                             </div>
-                                        </div>
-                                    ) : (
-                                        <div className="product-shopping2">
-                                            <div className="product-shopping2-1">
-                                                <img className="product-shopping2-1-1" src={`https://down-vn.img.susercontent.com/file/${variationImage}`} alt="" />
-                                                <div className="product-shopping2-1-2">
-                                                    <div>{productName}</div>
-                                                    <div style={{ color: 'rgb(238, 77, 45)' }}>₫{productPrice}</div>
-                                                    {/* Add other relevant information */}
-                                                    <button onClick={handleReset}>Trở lại</button>
+                                        ) : (
+                                            prooducts.map((product, index) => (
+                                                <div className="" style={{ padding: '3.75rem 0' }} key={index}>
+                                                    <img style={{ width: '3.25rem', height: '3.25rem' }} className="product-shopping2-1-1" src={`https://down-vn.img.susercontent.com/file/${product.variationImage}`} alt="" />
+                                                    <div className="product-shopping2-1-2" style={{ display: 'flex', marginTop: '-52px', marginLeft: '52px' }}>
+                                                        <div style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>{product.productName}</div>
+                                                        <div style={{ color: 'rgb(238, 77, 45)' }}>₫{product.productPrice}</div>
+                                                        <button onClick={handleReset}>Hủy</button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    )}
+                                            ))
+                                        )}
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </form>
-
                 </div>
-
-
             </header>
 
 
@@ -330,7 +314,11 @@ const Details = () => {
                                             <span className='details-pro-content1-2'>{item.item_basic.name}</span>
                                         </div>
                                         <div className='details-pro-content2'>
-                                            <button className='details-pro-content2-button1'></button>
+                                            <button className='details-pro-content2-button1'>
+                                                <div className='details-pro-content2-button2-1'>{item.item_basic.item_rating.rating_star}</div>
+                                                <div className='details-pro-content2-button2-2'>Đánh giá</div>
+
+                                            </button>
                                             <button className='details-pro-content2-button2'>
                                                 <div className='details-pro-content2-button2-1'>{item.item_basic.cmt_count}</div>
                                                 <div className='details-pro-content2-button2-2'>Đánh giá</div>
@@ -369,7 +357,7 @@ const Details = () => {
                                                                                 <button
                                                                                     className="details-pro-content4-1-2-1-section1-2-1"
                                                                                     key={optionIndex}
-                                                                                    style={{ paddingLeft: '2.5rem', border: optionIndex === selectedOptionIndex ? '1px solid red' : '1px solid rgba(0, 0, 0, .09)' }}
+                                                                                    style={{ paddingLeft: '2.5rem', border: optionIndex === selectedOptionIndex ? '1px solid red' : '1px solid rgba(0, 0, 0, .09)', color: optionIndex === selectedOptionIndex ? ' red' : 'black' }}
                                                                                     onClick={() => handleClickbt(optionIndex)}
                                                                                 >
                                                                                     {index === 0 && variation.images && variation.images.length > 0 && (

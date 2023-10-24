@@ -106,24 +106,24 @@ const Home = () => {
                 <div className='slider'>
                   {/* Slider */}
                   <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="https://cf.shopee.vn/file/vn-50009109-9f7257e7e72f64d37e901191bbc93a1a_xxhdpi" class="d-block w-100" alt="..." />
+                    <div className="carousel-inner">
+                      <div className="carousel-item active">
+                        <img src="https://cf.shopee.vn/file/vn-50009109-9f7257e7e72f64d37e901191bbc93a1a_xxhdpi" className="d-block w-100" alt="..." />
                       </div>
-                      <div class="carousel-item">
-                        <img src="https://cf.shopee.vn/file/vn-50009109-c32c3818f495049bfdaf7d2e60673943_xxhdpi" class="d-block w-100" alt="..." />
+                      <div className="carousel-item">
+                        <img src="https://cf.shopee.vn/file/vn-50009109-c32c3818f495049bfdaf7d2e60673943_xxhdpi" className="d-block w-100" alt="..." />
                       </div>
-                      <div class="carousel-item">
-                        <img src="https://cf.shopee.vn/file/vn-50009109-d8a56cc68d63168c485902f3bbc1a7c6_xxhdpi" class="d-block w-100" alt="..." />
+                      <div className="carousel-item">
+                        <img src="https://cf.shopee.vn/file/vn-50009109-d8a56cc68d63168c485902f3bbc1a7c6_xxhdpi" className="d-block w-100" alt="..." />
                       </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Next</span>
                     </button>
                   </div>
                   {/* Slider */}
@@ -260,7 +260,7 @@ const Home = () => {
               <div className='youlike2-1-1' >
                 <span className='youlike2-1-1-1' style={{ color: 'rbg(255,255,255)' }}>ĐỒ BẠN THÍCH Ở ĐÂY</span>
                 <Link className='youlike2-1-1-2'>Xem thêm
-                  <svg className='stardust-icon' enable-background="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
+                  <svg className='stardust-icon' enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
                 </Link>
               </div>
               <div className='youlike2-1-2'>
@@ -288,7 +288,7 @@ const Home = () => {
               <div className='youlike2-1-1' >
                 <span className='youlike2-1-1-1' style={{ color: 'rbg(255,255,255)' }}>HÀNG HIỆU OUTLET</span>
                 <Link className='youlike2-1-1-2'>Xem thêm
-                  <svg className='stardust-icon' enable-background="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
+                  <svg className='stardust-icon' enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
                 </Link>
               </div>
               <div className='youlike2-1-2'>
