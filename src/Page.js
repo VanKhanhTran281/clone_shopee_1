@@ -1,24 +1,28 @@
 import { useEffect, useState } from 'react';
-// import Home from './Home';
 import './App.css'
 import './Page.css'
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-
-// import SvgIcon from '@mui/material/SvgIcon';
 import SearchIcon from '@mui/icons-material/Search';
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import 'bootstrap/dist/css/bootstrap.css';
-// import Product from './component/dep';
 import ProductHome from './component/pagehome'
 import data from './component/data';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-
-
+import SidebarContent from './component_interface/SidebarContent';
+import { SidebarContentList1 } from './component_interface/example';
+import PaymentMethod from './component_interface/PaymentMethod';
+import { Payment, Shippingunits, Customer, ReturnShopee, NavbarProductPage, CountriesAndRegion, FollowOn, DownloadShopee, Policy, FooterEnd,SidebarContentList2 } from './component_interface/example'
+import CustomerCare from './component_interface/CustomerCare';
+import NavbarProducts from './component_interface/NavbarProducts';
+import CountriesAndRegions from './component_interface/CountriesAndRegions';
+import FollowOns from './component_interface/FollowOns';
+import DownloadShopees from './component_interface/DownloadShopees';
+import Policys from './component_interface/Policys';
+import FooterEnds from './component_interface/FooterEnds';
 const Page = () => {
 
   const [products, setProducts] = useState(data);
@@ -110,7 +114,7 @@ const Page = () => {
     handleSearch();
   };
   // Lọc theo giá nhập
-  const [minPrice,setMinPrice]=useState('')
+  const [minPrice, setMinPrice] = useState('')
   const [maxPrice, setMaxPrice] = useState('');
 
   const handleMinPriceChange = (event) => {
@@ -124,8 +128,8 @@ const Page = () => {
   const handleApplyFilter = () => {
     const filteredProducts = products.filter((product) => {
       return (
-        product.item_basic.price/100000 >= parseInt(minPrice) &&
-        product.item_basic.price/100000 <= parseInt(maxPrice)
+        product.item_basic.price / 100000 >= parseInt(minPrice) &&
+        product.item_basic.price / 100000 <= parseInt(maxPrice)
       );
     });
     // console.log(filteredProducts)
@@ -133,7 +137,7 @@ const Page = () => {
   };
 
   // Xóa tất cả reload lại trang
-  const handleReload=()=>{
+  const handleReload = () => {
     window.location.reload()
   }
   return (
@@ -179,22 +183,14 @@ const Page = () => {
                 <button className='button-search' style={{ border: 'none', outline: 'none' }} onClick={handleSearch}><SearchIcon style={{ color: '#fff' }} /></button>
               </div>
               <div class="" style={{ fontSize: '12px' }}>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Dép 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Áo 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Set Kẹp Tóc</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Dép Nam</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>iPhone 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Điện Thoại Giá Rẻ 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Sét Đồ Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Áo Khoác 1k Freeship</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Túi Xách Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Ốp iPhone</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to=''>Giày Nữ</Link>
+                {NavbarProductPage.map((e, i) => {
+                    return <NavbarProducts key={i} method={e} />;
+                  })}
               </div>
 
             </div>
             <div >
-              <div className='product-shopping-main' style={{padding:'10px 0'}}>
+              <div className='product-shopping-main' style={{ padding: '10px 0' }}>
                 {/* <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} /> */}
                 <svg style={{ color: '#fff' }} width="30" height="30" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 
@@ -236,47 +232,17 @@ const Page = () => {
                 </svg>
                 <h2 className="shopee-search-filter-status__text">Bộ lọc tìm kiếm<span class="sr-only"></span></h2>
               </div>
-              <fieldset className="shopee-filter-group shopee-facet-filter">
-                <legend className="shopee-filter-group__header">Theo Danh Mục</legend>
-                <div className="shopee-filter shopee-checkbox-filter">
-                  <label className="shopee-checkbox">
-                    <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035813" />
-                    </div>
-                    <span className="shopee-checkbox__label">Xăng-đan (51)</span>
-                  </label></div>
-                <div className="shopee-filter shopee-checkbox-filter">
-                  <label className="shopee-checkbox">
-                    <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035840" />
-                    </div>
-                    <span className="shopee-checkbox__label">Xăng-đan Đế Bằng (51)</span>
-                  </label>
-                </div>
-                <div className="shopee-filter shopee-checkbox-filter">
-                  <label className="shopee-checkbox">
-                    <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035807" />
-                    </div>
-                    <span className="shopee-checkbox__label">Giày Thể Thao/ Sneakers (44)</span>
-                  </label>
-                </div>
-                <div className="shopee-filter shopee-checkbox-filter">
-                  <label className="shopee-checkbox">
-                    <div className="shopee-checkbox__box">
-                      <input type="checkbox" name="" value="11035830" />
-                    </div><span className="shopee-checkbox__label">Giày Thể Thao/ Sneaker (44)</span>
-                  </label>
-                </div>
-                <button aria-expanded="false" className="shopee-filter-group__toggle-btn" aria-label="">Thêm
-                  <svg enableBackground="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down">
-                    <g>
-                      <path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
-                    </g>
-                  </svg>
-                </button>
-              </fieldset>
-              <fieldset className="shopee-filter-group shopee-facet-filter">
+              <SidebarContent
+                data={SidebarContentList1}
+                selectedLocations={selectedLocations}
+                setSelectedLocations={setSelectedLocations}
+              />
+              <SidebarContent
+                data={SidebarContentList2}
+                selectedLocations={selectedLocations}
+                setSelectedLocations={setSelectedLocations}
+              />
+              {/* <fieldset className="shopee-filter-group shopee-facet-filter">
                 <legend className="shopee-filter-group__header">Nơi Bán</legend>
                 <div className="shopee-filter shopee-checkbox-filter">
                   <label className="shopee-checkbox">
@@ -315,7 +281,7 @@ const Page = () => {
                     </g>
                   </svg>
                 </button>
-              </fieldset>
+              </fieldset> */}
               <fieldset className="shopee-filter-group shopee-facet-filter">
                 <legend className="shopee-filter-group__header">Đơn Vị Vận Chuyển</legend>
                 <div className="shopee-filter shopee-checkbox-filter">
@@ -467,7 +433,7 @@ const Page = () => {
                   </label>
                 </div>
               </fieldset>
-              <button class="button-ad mpD9DF" aria-label="" style={{backgroundColor: 'rgb(238, 77, 45)'}} onClick={handleReload}>
+              <button class="button-ad mpD9DF" aria-label="" style={{ backgroundColor: 'rgb(238, 77, 45)' }} onClick={handleReload}>
                 Xóa tất cả
               </button>
             </div>
@@ -675,17 +641,9 @@ const Page = () => {
                   CHĂM SÓC KHÁCH HÀNG
                 </div>
                 <ul className='customer-care1-1-2'>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Blog</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Mall</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Mua Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Bán Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Thanh Toán</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Xu</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận Chuyển</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trả Hàng & Hoàn Tiền</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chăm Sóc Khách Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Hành</span></Link></li>
+                  {Customer.map((e, i) => {
+                    return <CustomerCare key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
@@ -693,141 +651,31 @@ const Page = () => {
                   VỀ SHOPEE
                 </div>
                 <ul className='customer-care1-1-2'>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Giới Thiệu Về Shopee Việt Nam</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Tuyển Dụng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Điều Khoản Shopee</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Mật</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Hãng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Kênh Người Bán</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Flash Sales</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chương Trình Tiếp Thị liên kết Shopee</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Liên Hệ Với Truyền Thông</span></Link></li>
+                  {ReturnShopee.map((e, i) => {
+                    return <CustomerCare key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
                 <div className='customer-thanhtoan1'>THANH TOÁN</div>
                 <ul className='customer-thanhtoan2'>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/2c46b83d84111ddc32cfd3b5995d9281' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/5e3f0bee86058637ff23cfdf2e14ca09' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/9263fa8c83628f5deff55e2a90758b06' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0217f1d345587aa0a300e69e2195c492' alt='' />
-                    </Link>
-                  </li>
+                  {Payment.map((e, i) => {
+                    return <PaymentMethod key={i} method={e} />;
+                  })}
                 </ul>
                 <div className='customer-thanhtoan3'>ĐƠN VỊ VẬN CHUYỂN</div>
                 <ul className='customer-thanhtoan2'>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/vn-50009109-159200e3e365de418aae52b840f24185' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/d10b0ec09f0322f9201a4f3daf378ed2' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/77bf96a871418fbc21cc63dd39fb5f15' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/59270fb2f3fbb7cbc92fca3877edde3f' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/957f4eec32b963115f952835c779cd2c' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0d349e22ca8d4337d11c9b134cf9fe63' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/3900aefbf52b1c180ba66e5ec91190e5' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/6e3be504f08f88a15a28a9a447d94d3d' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/b8348201b4611fc3315b82765d35fc63' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0b3014da32de48c03340a4e4154328f6' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/vn-50009109-ec3ae587db6309b791b78eb8af6793fd' alt='' />
-                    </Link>
-                  </li>
+                  {Shippingunits.map((e, i) => {
+                    return <PaymentMethod key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
                 <div className='customer-care1-1-1'>THEO DÕI CHÚNG TÔI TRÊN</div>
                 <ul className='footer-linkweb'>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/2277b37437aa470fd1c71127c6ff8eb5' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Facebook</span>
-                    </Link>
-                  </li>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/5973ebbc642ceee80a504a81203bfb91' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Instagram</span>
-                    </Link>
-                  </li>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/f4f86f1119712b553992a75493065d9a' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Linkedln</span>
-                    </Link>
-                  </li>
+                  {FollowOn.map((e, i) => {
+                    return <FollowOns key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
@@ -837,15 +685,9 @@ const Page = () => {
                     <img className='footer-dowload1-1' src='https://down-vn.img.susercontent.com/file/a5e589e8e118e937dc660f224b9a1472' alt='' />
                   </Link>
                   <div className='footer-dowload2'>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ad01628e90ddf248076685f73497c163' alt='' />
-                    </Link>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ae7dced05f7243d0f3171f786e123def' alt='' />
-                    </Link>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/35352374f39bdd03b25e7b83542b2cb0' alt='' />
-                    </Link>
+                    {DownloadShopee.map((e, i) => {
+                      return <DownloadShopees key={i} method={e} />;
+                    })}
                   </div>
                 </div>
               </div>
@@ -855,40 +697,9 @@ const Page = () => {
               <div className='customer-care2-1-1'>© 2023 Shopee. Tất cả các quyền được bảo lưu.</div>
               <div className='customer-care2-2'>
                 <div className='customer-care2-2-1-1'>Quốc gia &amp; Khu vực:</div>
-
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Singapore</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Indonesia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Đài Loan</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Thái Lan</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Malaysia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Việt Nam</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Philippines</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Brazil</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>México</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Colombia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Chile</Link>
-                </div>
+                {CountriesAndRegion.map((e, i) => {
+                  return <CountriesAndRegions key={i} method={e} />;
+                })}
               </div>
 
             </div>
@@ -897,37 +708,19 @@ const Page = () => {
           <div className='policys'>
             <div className='policy'>
               <div className='list-policy'>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách bảo mật</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Quy chế hoạt động</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách vận chuyển</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách trả hàng và hoàn tiền</span>
-                  </Link>
-                </div>
+                {Policy.map((e, i) => {
+                  return <Policys key={i} method={e} />;
+                })}
               </div>
               <div className='img-footer'>
-                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
-                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
-                <Link className='img-footer1'><img className='img-footer1-2' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
+                <Link className='img-footer1 img-footer1-1'></Link>
+                <Link className='img-footer1 img-footer1-1'></Link>
+                <Link className='img-footer1 img-footer1-2'></Link>
               </div>
               <div style={{ marginBottom: '1.5625rem', display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }}>Công ty TNHH Shopee</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -  Điện thoại liên hệ: 024 73081221 (ext 4678)</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</div>
+              {FooterEnd.map((e, i) => {
+                return <FooterEnds key={i} method={e} />;
+              })}
             </div>
           </div>
         </div>

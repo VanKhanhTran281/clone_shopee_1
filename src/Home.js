@@ -10,7 +10,21 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import 'bootstrap/dist/css/bootstrap.css';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
-
+import PaymentMethod from './component_interface/PaymentMethod';
+import {
+  Payment, Shippingunits, Customer, ReturnShopee, NavbarProduct, CountriesAndRegion,
+  FollowOn, DownloadShopee, Policy, FooterEnd, SliderOption, ProductsYouLike, BrandOutlet
+} from './component_interface/example'
+import CustomerCare from './component_interface/CustomerCare';
+import NavbarProducts from './component_interface/NavbarProducts';
+import CountriesAndRegions from './component_interface/CountriesAndRegions';
+import FollowOns from './component_interface/FollowOns';
+import DownloadShopees from './component_interface/DownloadShopees';
+import Policys from './component_interface/Policys';
+import FooterEnds from './component_interface/FooterEnds';
+import SliderOptions from './component_interface/SliderOptions';
+import ProductsYouLikes from './component_interface/ProductsYouLikes';
+import BrandOutlets from './component_interface/BrandOutlets';
 
 const Home = () => {
   return (
@@ -54,22 +68,15 @@ const Home = () => {
                 <button className='button-search' style={{ border: 'none', outline: 'none' }} ><SearchIcon style={{ color: '#fff' }} /></button>
               </div>
               <div class="" style={{ fontSize: '12px' }}>
-                <Link to='page' className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }}>Dép 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Áo 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Set Kẹp Tóc</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Dép Nam</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>iPhone 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Điện Thoại Giá Rẻ 1k</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Sét Đồ Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Áo Khoác 1k Freeship</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Túi Xách Nữ</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Ốp iPhone</Link>
-                <Link className='space' style={{ color: '#fff', textDecoration: 'none', fontSize: '12px' }} to='page'>Giày Nữ</Link>
+                {NavbarProduct.map((e, i) => {
+                  return <NavbarProducts key={i} method={e} />;
+                })}
               </div>
+
 
             </div>
             <div >
-              <div className='product-shopping-main' style={{padding:'10px 0'}}>
+              <div className='product-shopping-main' style={{ padding: '10px 0' }}>
                 {/* <ShoppingCartIcon style={{ color: '#fff', fontSize: '25px' }} /> */}
                 <svg style={{ color: '#fff' }} width="30" height="30" fill="currentColor" className="bi bi-cart" viewBox="0 0 16 16">
                   <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 
@@ -135,111 +142,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
-
-
-
             <div className='linktab'>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/e4a404283b3824c211c1549aedd28d5f_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/vn-50009109-c7a2e1ae720f9704f92f72c9ef1a494a_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/vn-50009109-f6c34d719c3e4d33857371458e7a7059_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/vn-50009109-852300c407c5e79bf5dc1854aa0cfeef_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/vn-50009109-8a387d78a7ad954ec489d3ef9abd60b4_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/b3535d7e56c58c4ebe9a87672d38cc5e_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/9df57ba80ca225e67c08a8a0d8cc7b85_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/a08ab28962514a626195ef0415411585_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-              <Link style={{ textDecoration: 'none' }}>
-                <div className=''>
-                  <div className='linktabdiv2'>
-                    <div className='linktabdiv3'>
-                      <img src='https://cf.shopee.vn/file/vn-50009109-1975fb1af4ae3c22878d04f6f440b6f9_xhdpi' alt='' style={{ height: '100%', opacity: '1' }} />
-                    </div>
-
-                  </div>
-                  <div className='linktabdiv5'>Khung giờ săn sale</div>
-                </div>
-              </Link>
-
-
+              {SliderOption.map((e, i) => {
+                return <SliderOptions key={i} method={e} />;
+              })}
             </div>
           </div>
         </div>
@@ -264,23 +170,9 @@ const Home = () => {
                 </Link>
               </div>
               <div className='youlike2-1-2'>
-
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/vn-50009109-122faaec270ca3277198c6d0c77bb0fe_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>₫169.000</div></div>
-                  <div className='youlike2-1-2-1-3'><div class="youlike2-1-2-1-3-1"><span class="youlike2-1-2-1-3-1-1">-23%</span></div></div>
-                </Link>
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/vn-50009109-807a1f0a40b4fc6dad3bb7ad5e0e01a5_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>₫83.000</div></div>
-                  <div className='youlike2-1-2-1-3'><div class="youlike2-1-2-1-3-1"><span class="youlike2-1-2-1-3-1-1">-14%</span></div></div>
-                </Link>
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/dc69149a669af488b6f6ff05be2b6fbb_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>₫870.000</div></div>
-                  <div className='youlike2-1-2-1-3'><div class="youlike2-1-2-1-3-1"><span class="youlike2-1-2-1-3-1-1">-14%</span></div></div>
-                </Link>
-
+                {ProductsYouLike.map((e, i) => {
+                  return <ProductsYouLikes key={i} method={e} />;
+                })}
               </div>
             </div>
 
@@ -292,26 +184,9 @@ const Home = () => {
                 </Link>
               </div>
               <div className='youlike2-1-2'>
-
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lhwsava28aklad' alt='' /></div>
-                  <div className='img-th'><img className='img-tha' src='https://down-vn.img.susercontent.com/file/9113119d5cef3292952e04c24cacc78d_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>GIẢM SÂU GIÁ SỐC</div></div>
-
-                </Link>
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/c5fb264ed0d4cac36cb9d1f2437e6a92' alt='' /></div>
-                  <div className='img-th'><img className='img-tha' src='https://down-vn.img.susercontent.com/file/65b1c46d37b3c9b4a56c8e7fd673838d_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>GIẢM ĐẾN 30%</div></div>
-
-                </Link>
-                <Link className='youlike2-1-2-1'>
-                  <div className='youlike2-1-2-1-1'><img className='youlike2-1-2-1-1-1' src='https://down-vn.img.susercontent.com/file/vn-11134207-23020-gkekiwhjm2mv22' alt='' /></div>
-                  <div className='img-th'><img className='img-tha' src='https://down-vn.img.susercontent.com/file/vn-11134216-7r98o-llx8zp2z3dnj5b_tn' alt='' /></div>
-                  <div className='youlike2-1-2-1-2'><div class="youlike2-1-2-1-2-1" style={{ color: 'rgb(238, 78, 46)' }}>GIẢM ĐẾN 30%</div></div>
-
-                </Link>
-
+                {BrandOutlet.map((e, i) => {
+                  return <BrandOutlets key={i} method={e} />;
+                })}
               </div>
             </div>
           </div>
@@ -361,20 +236,6 @@ const Home = () => {
                           </div>
                         </div>
                       </Link>
-                      <Link className='home-category-list_grid' >
-                        <div className='grid1'>
-                          <div className='grid2'>
-                            <div className='grid3'>
-                              <img className='grid4' src='https://down-vn.img.susercontent.com/file/687f3967b7c2fe6a134a2c11894eea4b_tn' alt='' />
-                            </div>
-                          </div>
-                          <div>
-                            <div>Thoi trang nam</div>
-                          </div>
-                        </div>
-                      </Link>
-
-
                     </li>
                   </ul>
                 </div>
@@ -433,17 +294,9 @@ const Home = () => {
                   CHĂM SÓC KHÁCH HÀNG
                 </div>
                 <ul className='customer-care1-1-2'>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trung tâm trợ giúp</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Blog</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Mall</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Mua Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Hướng Dẫn Bán Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Thanh Toán</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Shopee Xu</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Vận Chuyển</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Trả Hàng & Hoàn Tiền</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chăm Sóc Khách Hàng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Hành</span></Link></li>
+                  {Customer.map((e, i) => {
+                    return <CustomerCare key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
@@ -451,141 +304,31 @@ const Home = () => {
                   VỀ SHOPEE
                 </div>
                 <ul className='customer-care1-1-2'>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Giới Thiệu Về Shopee Việt Nam</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Tuyển Dụng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Điều Khoản Shopee</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Sách Bảo Mật</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chính Hãng</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Kênh Người Bán</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Flash Sales</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Chương Trình Tiếp Thị liên kết Shopee</span></Link></li>
-                  <li className='customer-care1-1-2-1'><Link className='customer-care1-1-2-1-1'><span className='customer-care1-1-2-1-1-1 hoverr'>Liên Hệ Với Truyền Thông</span></Link></li>
+                  {ReturnShopee.map((e, i) => {
+                    return <CustomerCare key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
                 <div className='customer-thanhtoan1'>THANH TOÁN</div>
                 <ul className='customer-thanhtoan2'>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/2c46b83d84111ddc32cfd3b5995d9281' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/5e3f0bee86058637ff23cfdf2e14ca09' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/9263fa8c83628f5deff55e2a90758b06' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0217f1d345587aa0a300e69e2195c492' alt='' />
-                    </Link>
-                  </li>
+                  {Payment.map((e, i) => {
+                    return <PaymentMethod key={i} method={e} />;
+                  })}
                 </ul>
                 <div className='customer-thanhtoan3'>ĐƠN VỊ VẬN CHUYỂN</div>
                 <ul className='customer-thanhtoan2'>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/vn-50009109-159200e3e365de418aae52b840f24185' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/d10b0ec09f0322f9201a4f3daf378ed2' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/77bf96a871418fbc21cc63dd39fb5f15' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/59270fb2f3fbb7cbc92fca3877edde3f' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/957f4eec32b963115f952835c779cd2c' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0d349e22ca8d4337d11c9b134cf9fe63' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/3900aefbf52b1c180ba66e5ec91190e5' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/6e3be504f08f88a15a28a9a447d94d3d' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/b8348201b4611fc3315b82765d35fc63' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/0b3014da32de48c03340a4e4154328f6' alt='' />
-                    </Link>
-                  </li>
-                  <li className='customer-thanhtoan2-1'>
-                    <Link className='customer-thanhtoan2-1-1'>
-                      <img src='https://down-vn.img.susercontent.com/file/vn-50009109-ec3ae587db6309b791b78eb8af6793fd' alt='' />
-                    </Link>
-                  </li>
+                  {Shippingunits.map((e, i) => {
+                    return <PaymentMethod key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
                 <div className='customer-care1-1-1'>THEO DÕI CHÚNG TÔI TRÊN</div>
                 <ul className='footer-linkweb'>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/2277b37437aa470fd1c71127c6ff8eb5' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Facebook</span>
-                    </Link>
-                  </li>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/5973ebbc642ceee80a504a81203bfb91' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Instagram</span>
-                    </Link>
-                  </li>
-                  <li className='footer-linkweb1'>
-                    <Link className='footer-linkweb1-1'>
-                      <img className='footer-linkweb1-1-1' src='https://down-vn.img.susercontent.com/file/f4f86f1119712b553992a75493065d9a' alt='' />
-                      <span className='footer-linkweb1-1-2 hoverr'>Linkedln</span>
-                    </Link>
-                  </li>
+                  {FollowOn.map((e, i) => {
+                    return <FollowOns key={i} method={e} />;
+                  })}
                 </ul>
               </div>
               <div className='customer-care1-1'>
@@ -595,15 +338,9 @@ const Home = () => {
                     <img className='footer-dowload1-1' src='https://down-vn.img.susercontent.com/file/a5e589e8e118e937dc660f224b9a1472' alt='' />
                   </Link>
                   <div className='footer-dowload2'>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ad01628e90ddf248076685f73497c163' alt='' />
-                    </Link>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/ae7dced05f7243d0f3171f786e123def' alt='' />
-                    </Link>
-                    <Link className='footer-dowload2-1'>
-                      <img className='footer-dowload2-1-1' src='https://down-vn.img.susercontent.com/file/35352374f39bdd03b25e7b83542b2cb0' alt='' />
-                    </Link>
+                    {DownloadShopee.map((e, i) => {
+                      return <DownloadShopees key={i} method={e} />;
+                    })}
                   </div>
                 </div>
               </div>
@@ -613,40 +350,9 @@ const Home = () => {
               <div className='customer-care2-1-1'>© 2023 Shopee. Tất cả các quyền được bảo lưu.</div>
               <div className='customer-care2-2'>
                 <div className='customer-care2-2-1-1'>Quốc gia &amp; Khu vực:</div>
-
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Singapore</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Indonesia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Đài Loan</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Thái Lan</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Malaysia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Việt Nam</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Philippines</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Brazil</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>México</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Colombia</Link>
-                </div>
-                <div className='customer-care2-2-2'>
-                  <Link className='customer-care2-2-2-1'>Chile</Link>
-                </div>
+                {CountriesAndRegion.map((e, i) => {
+                  return <CountriesAndRegions key={i} method={e} />;
+                })}
               </div>
 
             </div>
@@ -655,43 +361,23 @@ const Home = () => {
           <div className='policys'>
             <div className='policy'>
               <div className='list-policy'>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách bảo mật</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Quy chế hoạt động</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách vận chuyển</span>
-                  </Link>
-                </div>
-                <div className='list-policy1'>
-                  <Link className='list-policy1-1'>
-                    <span>Chính sách trả hàng và hoàn tiền</span>
-                  </Link>
-                </div>
+                {Policy.map((e, i) => {
+                  return <Policys key={i} method={e} />;
+                })}
               </div>
               <div className='img-footer'>
-                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
-                <Link className='img-footer1'><img className='img-footer1-1' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
-                <Link className='img-footer1'><img className='img-footer1-2' src='https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/3ce17addcf90b8cd3952b8ae0ffc1299.png' alt='' /></Link>
+                <Link className='img-footer1 img-footer1-1'></Link>
+                <Link className='img-footer1 img-footer1-1'></Link>
+                <Link className='img-footer1 img-footer1-2'></Link>
               </div>
               <div style={{ marginBottom: '1.5625rem', display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }}>Công ty TNHH Shopee</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Địa chỉ: Tầng 4-5-6, Tòa nhà Capital Place, số 29 đường Liễu Giai, Phường Ngọc Khánh, Quận Ba Đình, Thành phố Hà Nội, Việt Nam. Tổng đài hỗ trợ: 19001221 - Email: cskh@hotro.shopee.vn</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Chịu Trách Nhiệm Quản Lý Nội Dung: Nguyễn Đức Trí -  Điện thoại liên hệ: 024 73081221 (ext 4678)</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >Mã số doanh nghiệp: 0106773786 do Sở Kế hoạch &amp; Đầu tư TP Hà Nội cấp lần đầu ngày 10/02/2015</div>
-              <div style={{ display: 'block', width: '100%', textAlign: 'center', marginTop: '0.5rem' }} >© 2015 - Bản quyền thuộc về Công ty TNHH Shopee</div>
+              {FooterEnd.map((e, i) => {
+                return <FooterEnds key={i} method={e} />;
+              })}
             </div>
           </div>
         </div>
       </div>
-
-
     </>
   )
 };
