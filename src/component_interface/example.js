@@ -555,4 +555,89 @@ export const SidebarContentList2 = [
     title: 'Hải Dương',
     value: "Hải Dương"
   },
+  {
+    title: 'Thanh Hóa',
+    value: "Thanh Hóa"
+  },
+  {
+    title: 'Nam Định',
+    value: "Nam Định"
+  },
+  {
+    title: 'Quảng Nam',
+    value: "Quảng Nam"
+  },
+  {
+    title: 'Bắc Ninh',
+    value: "Bắc Ninh"
+  },
+  {
+    title: 'Gia Lai',
+    value: "Gia Lai"
+  }
+
+];
+export const SidebarContentList3 = [
+
+  {
+    listname: 'Đơn Vị Vận Chuyển',
+    title: 'Hỏa Tốc',
+    value: ""
+  },
+  {
+    title: 'Nhanh',
+    value: ""
+  },
+  {
+    title: 'Tiết Kiệm',
+    value: ""
+  }
+];
+export const SidebarContentList4 = [
+
+  {
+    listname: 'Thương Hiệu',
+    title: 'Wika',
+    value: ""
+  },
+  {
+    title: 'Vento',
+    value: ""
+  },
+  {
+    title: 'Kokubo',
+    value: ""
+  },
+  {
+    title: 'GUMEN',
+    value: ""
+  },
+];
+export const SidebarContentList5 = [
+
+  {
+    listname: 'Loại Shop',
+    title: 'Shopee Mall',
+    value: ""
+  },
+  {
+    title: 'Shop Yêu Thích',
+    value: ""
+  },
+  {
+    title: 'Shop Yêu Thích +',
+    value: ""
+  }
+];
+export const SidebarContentList6 = [
+
+  {
+    listname: 'Tình Trạng',
+    title: 'Đã Sử Dụng',
+    value: ""
+  },
+  {
+    title: 'Mới',
+    value: ""
+  }
 ];

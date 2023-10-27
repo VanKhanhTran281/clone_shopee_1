@@ -1,6 +1,7 @@
 .product-page{
     transition: margin-top .3s cubic-bezier(.4,0,.2,1);
     -webkit-overflow-scrolling: touch;
+    background: #f3f3f3;
 }
 .product-page-contents{
     min-height: 100vh;
@@ -46,6 +47,11 @@
     font-weight: 700;
 
 }
+.icon-arrow-down{
+    font-size: .5rem;
+    margin-left: 5px;
+    padding-top: 3px;
+}
 .shopee-search-filter-status__text{
     font-weight: inherit;
     font-size: inherit;
@@ -88,6 +94,7 @@
     align-items: flex-start;
     font-size: .875rem;
     color: rgba(0,0,0,.8);
+    line-height: 16.8px;
 }
 .shopee-checkbox__box{
     position: relative;
@@ -115,6 +122,8 @@
     color: inherit;
     font: inherit;
     margin: 0;
+    font-size: 14px;
+    line-height: 16.8px;
 }
 /* Phần tìm kiếm theo khoảng giá */
 .shopee-price-range-filter__inputs{
@@ -216,6 +225,9 @@
     align-items: center;
     text-decoration: none;
     color: rgba(0,0,0,.87);
+    transition: transform .1s cubic-bezier(.4,0,.6,1),box-shadow .1s cubic-bezier(.4,0,.6,1);
+    cursor: pointer;
+    user-select: none;
 }
 .shopee-search-user-item__leading{
     text-decoration: none;
@@ -326,6 +338,34 @@
     color: #ee4d2d;
     
 }
+.shopee-search-user-seller-info-item{
+    min-width: 90px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-left: 1px solid rgba(0,0,0,.09);
+    text-align: center;
+    padding: 0 .625rem;
+    line-height: 16.8px;
+}
+.shopee-search-user-seller-info-item__header{
+    font-size: .875rem;
+    display: flex;
+    grid-gap: .5rem;
+    gap: .5rem;
+    align-items: center;
+}
+.shopee-svg-icon1{
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    position: relative;
+}
+.shopee-header-section__content:hover{
+    box-shadow: 0 0 10px  rgba(0, 0, 0, 0.3);
+    transform: translate(1px, -1px);
+}
+
 
 
 /* Content item */

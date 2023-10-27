@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -114,7 +112,7 @@ const Details = () => {
 
                 // Kiểm tra ảnh trùng lặp
                 if (isImageDuplicate(firstImage)) {
-                    alert('Ảnh đã tồn tại trong giỏ hàng!');
+                    alert('Đã tăng số lượng sản phẩm có sẵn trong giỏ hàng !');
                     return;
                 }
 
@@ -154,13 +152,16 @@ const Details = () => {
                             <Link className='space space1 space2' style={{ color: '#fff' }}>Trở thành người bán Shoppee</Link>
                             <div className='space space1 space2' style={{ color: '#fff' }}>Tải ứng dụng</div>
                             <div className='space space1' style={{ color: '#fff' }}>Kết nối </div>
-                            <div className='space1'><FacebookIcon /> <InstagramIcon /></div>
+                            <div className='icons-header'>
+                                <Link className='icons-header1' title='Kết nối Facbook'></Link>
+                                <Link className='icons-header2' title='Kết nối Instagram'></Link>
+                            </div>
                         </div>
                         <div style={{ flex: '1' }}></div>
                         <ul className='flex2'>
-                            <li className='space space2' style={{ color: '#fff' }}><NotificationsNoneIcon />Thông Báo</li>
-                            <Link to='/page' className='space space1 space2' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ Trợ</Link>
-                            <span className='space space1 space2' style={{ color: '#fff' }}><LanguageIcon />Tiếng Việt</span>
+                            <li className='space space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><NotificationsNoneIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Thông Báo</div></li>
+                            <Link to='' className='space space1 space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><HelpOutlineIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Hỗ Trợ</div></Link>
+                            <span className='space space1 space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><LanguageIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Tiếng việt</div></span>
                             <Link to='/signup' className='space space1 space2' style={{ color: '#fff' }}>Đăng Ký</Link>
                             <Link to='/login' className='space space1 space2' style={{ color: '#fff' }}>Đăng Nhập</Link>
 
@@ -169,21 +170,23 @@ const Details = () => {
                 </div>
 
                 <div className='shopee-searchbar'>
-                    <form className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <div style={{ display: 'flex', alignItems: "center" }}>
-                            <Link to='/' style={{ color: '#fff', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
-                                <LocalMallIcon style={{ fontSize: '50' }}>
+                            <Link to='/' style={{ color: '#fff', marginTop: '-10px', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
+                                <LocalMallIcon style={{ fontSize: '50', marginTop: '-8px' }}>
                                     <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                                 </LocalMallIcon>
-                                <span style={{ fontSize: '35px' }}>Shopee</span>
+                                <span style={{ fontSize: '30px' }}>Shopee</span>
                             </Link>
                         </div>
-                        <div style={{ display: 'flex', flexDirection: 'column ', justifyContent: "flex-start" }}>
-                            <div style={{ display: 'flex' }}>
-                                <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '840px', borderRadius: '5px' }} />
+                        <div style={{ display: 'flex', flexDirection: 'column ', width: '840px', justifyContent: "flex-start" }}>
+                            <form style={{ display: 'flex', backgroundColor: '#fff', borderRadius: '2px', height: '2.5rem', padding: '.1875rem', border: 'none', justifyContent: 'space-between' }}>
+                                <div style={{ padding: '0 .625rem', flex: '1' }}>
+                                    <input className="input-search" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ marginTop: '6px', width: '500px' }} />
+                                </div>
                                 <button className='button-search' style={{ border: 'none', outline: 'none' }}><SearchIcon style={{ color: '#fff' }} /></button>
-                            </div>
-                            <div className="" style={{ fontSize: '12px' }}>
+                            </form>
+                            <div className="" style={{ fontSize: '12px', marginTop: '.1875rem' }}>
                                 {NavbarProductDetails.map((e, i) => {
                                     return <NavbarProducts key={i} method={e} />;
                                 })}
@@ -229,7 +232,7 @@ const Details = () => {
                                 </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </header>
 
@@ -383,10 +386,10 @@ const Details = () => {
                                                             <h3 className="details-pro-content4-1-2-1-section1-1">Số Lượng</h3>
                                                             <div className='details-pro-content4-1-2-1-section2-2'>
                                                                 <div style={{ marginRight: '15px' }}>
-                                                                    <div style={{ display: 'flex', alignItems: 'center', background: '#fff' }}>
-                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleRemove}><HorizontalRuleIcon /></button>
-                                                                        <button className='details-pro-content4-1-2-1-section2-2-button2'>{count}</button>
-                                                                        <button className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleSum}><AddIcon /></button>
+                                                                    <div style={{ display: 'flex', height: '32px', alignItems: 'center', background: '#fff' }}>
+                                                                        <button style={{ width: '32px' }} className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleRemove}><HorizontalRuleIcon style={{ fontSize: '18.5px' }} /></button>
+                                                                        <button style={{ width: '50px' }} className='details-pro-content4-1-2-1-section2-2-button2'>{count}</button>
+                                                                        <button style={{ width: '32px' }} className='details-pro-content4-1-2-1-section2-2-button1' onClick={handleSum}><AddIcon style={{ fontSize: '18.5px' }} /></button>
                                                                     </div>
                                                                 </div>
                                                                 <div>{item.item_basic.stock} sản phẩm có sẵn</div>

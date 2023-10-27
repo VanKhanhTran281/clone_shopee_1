@@ -2,9 +2,6 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './App.css'
 import SearchIcon from '@mui/icons-material/Search';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -38,13 +35,16 @@ const Home = () => {
               <Link className='space space1 space2' style={{ color: '#fff' }}>Trở thành người bán Shoppee</Link>
               <div className='space space1 space2' style={{ color: '#fff' }}>Tải ứng dụng</div>
               <div className='space space1 ' style={{ color: '#fff' }}>Kết nối </div>
-              <div className='space1'><FacebookIcon /> <InstagramIcon /></div>
+              <div className='icons-header'>
+                <Link className='icons-header1' title='Kết nối Facbook'></Link>
+                <Link className='icons-header2' title='Kết nối Instagram'></Link>
+              </div>
             </div>
             <div style={{ flex: '1' }}></div>
             <ul className='flex2'>
-              <li className='space space2' style={{ color: '#fff' }}><NotificationsNoneIcon />Thông Báo</li>
-              <Link to='' className='space space1 space2' style={{ color: '#fff' }}><HelpOutlineIcon />Hỗ Trợ</Link>
-              <span className='space space1 space2' style={{ color: '#fff' }}><LanguageIcon />Tiếng việt</span>
+              <li className='space space2' style={{ color: '#fff',display:'flex',paddingTop:'6px' }}><NotificationsNoneIcon style={{fontSize:'1.1rem'}}/><div style={{marginLeft:'.3125rem'}}>Thông Báo</div></li>
+              <Link to='' className='space space1 space2' style={{ color: '#fff',display:'flex',paddingTop:'6px' }}><HelpOutlineIcon style={{fontSize:'1.1rem'}}/><div style={{marginLeft:'.3125rem'}}>Hỗ Trợ</div></Link>
+              <span className='space space1 space2' style={{ color: '#fff',display:'flex',paddingTop:'6px' }}><LanguageIcon style={{fontSize:'1.1rem'}}/><div style={{marginLeft:'.3125rem'}}>Tiếng việt</div></span>
               <Link to='/signup' className='space space1 space2' style={{ color: '#fff' }}>Đăng Ký</Link>
               <Link to='/login' className='space space1 space2 ' style={{ color: '#fff' }}>Đăng Nhập</Link>
 
@@ -53,21 +53,23 @@ const Home = () => {
         </div>
 
         <div className='shopee-searchbar'>
-          <form className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <div className="shopee-searchbar-input" autoComplete="off" style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ display: 'flex', alignItems: "center" }}>
-              <Link to='/' style={{ color: '#fff', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
-                <LocalMallIcon style={{ fontSize: '50' }}>
+              <Link to='/' style={{ color: '#fff',marginTop:'-10px', textDecoration: 'none', display: 'flex', alignItems: "center" }} >
+                <LocalMallIcon style={{ fontSize: '50',marginTop:'-8px' }}>
                   <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                 </LocalMallIcon>
-                <span style={{ fontSize: '35px' }}>Shopee</span>
+                <span style={{ fontSize: '30px' }}>Shopee</span>
               </Link>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column ', justifyContent: "flex-start" }}>
-              <div style={{ display: 'flex' }}>
-                <input className="input" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ fontSize: '25px ', width: '840px', borderRadius: '5px' }} />
+            <div style={{ display: 'flex', flexDirection: 'column ', width: '840px', justifyContent: "flex-start" }}>
+              <form style={{ display: 'flex', backgroundColor: '#fff', borderRadius: '2px', height: '2.5rem', padding: '.1875rem', border: 'none', justifyContent: 'space-between' }}>
+                <div style={{ padding: '0 .625rem', flex: '1' }}>
+                  <input className="input-search" placeholder="Shopee bao ship 0Đ - Đăng ký ngay!" style={{ marginTop: '6px', width: '500px' }} />
+                </div>
                 <button className='button-search' style={{ border: 'none', outline: 'none' }} ><SearchIcon style={{ color: '#fff' }} /></button>
-              </div>
-              <div class="" style={{ fontSize: '12px' }}>
+              </form>
+              <div class="" style={{ fontSize: '12px', marginTop: '.1875rem' }}>
                 {NavbarProduct.map((e, i) => {
                   return <NavbarProducts key={i} method={e} />;
                 })}
@@ -97,7 +99,7 @@ const Home = () => {
                 </div> */}
               </div>
             </div>
-          </form>
+          </div>
 
         </div>
 
@@ -191,7 +193,7 @@ const Home = () => {
             </div>
           </div>
           {/*  */}
-          <div style={{ height: '15px' }}>
+          <div style={{ height: '15px' ,background:'#fff' }}>
             <picture>
               <img src="https://down-vn.img.susercontent.com/file/vn-50009109-4603c96ddfca3ce30d6a6a3d1d32b9a2" class="PLPphI" style={{ height: '15px' }} alt='' />
             </picture>

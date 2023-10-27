@@ -1,11 +1,9 @@
 import {useEffect,useState} from 'react'
-import { BrowserRouter, Routes, Route ,Link,useNavigate,useParams} from "react-router-dom";
-import data from './data'
+import { BrowserRouter, Routes, Route ,Link,useNavigate} from "react-router-dom";
 import './dep.css'
 
 function ProductHome({products}){
   const navigate=useNavigate();
-  // const { itemid } = useParams();
   const handleShowDetails=(itemid)=>{
     navigate(`/details/${itemid}`);
   }
