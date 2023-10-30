@@ -1,0 +1,24 @@
+@media (max-width: 800px) and (min-width: 355.2px)  {
+    .flex1{
+        position: fixed;
+        left: -101px;
+    }
+    .flex2{
+        position: relative;
+        right: -248px;
+    }
+  }
+  
+  @media (min-width: 355.2px) and (max-width: 1199px) {
+    .flex1{
+        position: fixed;
+        left: 0px;
+    }
+    .flex2{
+        position: relative;
+        right: -254px;
+    }
+  }
+  
+  /* @media (min-width: 355.2px) and (max-width: 996px) {
+  } */

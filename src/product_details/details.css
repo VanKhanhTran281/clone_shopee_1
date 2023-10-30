@@ -102,8 +102,99 @@ position: relative;
     width: 100%;
 }
 .details-img2{
-
+    margin: 5px -5px;
+    position: relative;
 }
+.details-img2-1{
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    width: 20%;
+}
+.details-img2-1-1:hover{
+    border: 2px solid #d0011b ;
+}
+.details-img2-1-1{
+    position: relative;
+}
+.details-img2-1-1-1{
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+}
+.details-img2-1-1-1-1{
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.details-img2-2{
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    border: 0!important;
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+    position: absolute;
+    width: 1.25rem;
+    height: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    border: 0;
+    background-color: rgba(0,0,0,.2)!important;
+    left: 5px;
+}
+    .details-img2-2-1{
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        position: relative;
+        font-size: 1.25rem;
+    }
+.details-img2-3{
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    border: 0!important;
+    font-size: .875rem;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s cubic-bezier(.4,0,.6,1);
+    position: absolute;
+    width: 1.25rem;
+    height: 2.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    border: 0;
+    background-color: rgba(0,0,0,.2)!important;
+    right: 5px;
+}
+    .details-img2-3-1{
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        fill: currentColor;
+        position: relative;
+        font-size: 1.25rem;
+    }
+
 .details-like{
     margin-top: 15px;
     display: flex;
@@ -111,11 +202,71 @@ position: relative;
     align-items: center;
     margin-left: -15px;
 }
-.details-share{
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-}
+    .details-share{
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+    }
+        .sprite-product-sharing-M{
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border: 0;
+            margin-left: 5px;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            background-position: 0 -100%;
+            background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1876c121524255f7eb6a64b4d8d0b7e3.png');
+            background-size: 100%;
+            background-color: initial;
+        }
+        .sprite-product-sharing-F{
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border: 0;
+            margin-left: 5px;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            background-position: 0 0;
+            background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1876c121524255f7eb6a64b4d8d0b7e3.png');
+            background-size: 100%;
+            background-color: initial;
+        }
+        .sprite-product-sharing-P{
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border: 0;
+            margin-left: 5px;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            background-position: 0 -300%;
+            background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1876c121524255f7eb6a64b4d8d0b7e3.png');
+            background-size: 100%;
+            background-color: initial;
+        }
+        .sprite-product-sharing-T{
+            width: 25px;
+            height: 25px;
+            padding: 0;
+            border: 0;
+            margin-left: 5px;
+            position: relative;
+            overflow: visible;
+            outline: 0;
+            background-position: 0 -400%;
+            background-image: url('https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/1876c121524255f7eb6a64b4d8d0b7e3.png');
+            background-size: 100%;
+            background-color: initial;
+        }
+
+
+
+
 .details-love{
     border-left: 1px solid rgba(0,0,0,.09);
     flex: 1;

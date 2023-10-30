@@ -22,7 +22,7 @@ import FooterEnds from './component_interface/FooterEnds';
 import SliderOptions from './component_interface/SliderOptions';
 import ProductsYouLikes from './component_interface/ProductsYouLikes';
 import BrandOutlets from './component_interface/BrandOutlets';
-
+import './responsive/responsive.css'
 const Home = () => {
   return (
     <>
@@ -69,7 +69,7 @@ const Home = () => {
                 </div>
                 <button className='button-search' style={{ border: 'none', outline: 'none' }} ><SearchIcon style={{ color: '#fff' }} /></button>
               </form>
-              <div class="" style={{ fontSize: '12px', marginTop: '.1875rem' }}>
+              <div  style={{ fontSize: '12px', marginTop: '.1875rem' }}>
                 {NavbarProduct.map((e, i) => {
                   return <NavbarProducts key={i} method={e} />;
                 })}
@@ -114,7 +114,7 @@ const Home = () => {
               <div style={{ lineHeight: "0", display: "flex", minHeight: "235px", maxHeight: "235px" }}>
                 <div className='slider'>
                   {/* Slider */}
-                  <div id="carouselExample" class="carousel slide">
+                  <div id="carouselExample" className="carousel slide">
                     <div className="carousel-inner">
                       <div className="carousel-item active">
                         <img src="https://cf.shopee.vn/file/vn-50009109-9f7257e7e72f64d37e901191bbc93a1a_xxhdpi" className="d-block w-100" alt="..." />
@@ -168,7 +168,7 @@ const Home = () => {
               <div className='youlike2-1-1' >
                 <span className='youlike2-1-1-1' style={{ color: 'rbg(255,255,255)' }}>ĐỒ BẠN THÍCH Ở ĐÂY</span>
                 <Link className='youlike2-1-1-2'>Xem thêm
-                  <svg className='stardust-icon' enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
+                  <svg  enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" className="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
                 </Link>
               </div>
               <div className='youlike2-1-2'>
@@ -182,7 +182,7 @@ const Home = () => {
               <div className='youlike2-1-1' >
                 <span className='youlike2-1-1-1' style={{ color: 'rbg(255,255,255)' }}>HÀNG HIỆU OUTLET</span>
                 <Link className='youlike2-1-1-2'>Xem thêm
-                  <svg className='stardust-icon' enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" class="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
+                  <svg  enableBackground="new 0 0 13 21" viewBox="0 0 13 21" role="img" className="stardust-icon stardust-icon-arrow-right-bold"><path stroke="none" d="m11.1 9.9l-9-9-2.2 2.2 8 7.9-8 7.9 2.2 2.1 9-9 1-1z"></path></svg>
                 </Link>
               </div>
               <div className='youlike2-1-2'>
@@ -195,7 +195,7 @@ const Home = () => {
           {/*  */}
           <div style={{ height: '15px' ,background:'#fff' }}>
             <picture>
-              <img src="https://down-vn.img.susercontent.com/file/vn-50009109-4603c96ddfca3ce30d6a6a3d1d32b9a2" class="PLPphI" style={{ height: '15px' }} alt='' />
+              <img src="https://down-vn.img.susercontent.com/file/vn-50009109-4603c96ddfca3ce30d6a6a3d1d32b9a2" className="PLPphI" style={{ height: '15px' }} alt='' />
             </picture>
           </div>
           {/*  */}

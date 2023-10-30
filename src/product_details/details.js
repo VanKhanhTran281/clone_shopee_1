@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
 import SearchIcon from '@mui/icons-material/Search';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import LanguageIcon from '@mui/icons-material/Language';
 import LocalMallIcon from '@mui/icons-material/LocalMall';
 import data from '../component/data';
 import './details.css'
-import TwitterIcon from '@mui/icons-material/Twitter';
-import PinterestIcon from '@mui/icons-material/Pinterest';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
@@ -24,7 +20,6 @@ import FollowOns from '../component_interface/FollowOns';
 import DownloadShopees from '../component_interface/DownloadShopees';
 import Policys from '../component_interface/Policys';
 import FooterEnds from '../component_interface/FooterEnds';
-
 const Details = () => {
     const { itemid } = useParams();
     const item = data.find((det) => det.item_basic.itemid == itemid);
@@ -91,7 +86,6 @@ const Details = () => {
     useEffect(() => {
         // Khôi phục dữ liệu từ localStorage khi component được tạo
         const storedProducts = localStorage.getItem('products');
-
         if (storedProducts) {
             setProoducts(JSON.parse(storedProducts));
         }
@@ -109,30 +103,22 @@ const Details = () => {
             const firstVariation = item.item_basic.tier_variations[0];
             if (firstVariation.images && firstVariation.images.length > 0) {
                 const firstImage = firstVariation.images[selectedOptionIndex];
-
                 // Kiểm tra ảnh trùng lặp
                 if (isImageDuplicate(firstImage)) {
                     alert('Đã tăng số lượng sản phẩm có sẵn trong giỏ hàng !');
                     return;
                 }
-
                 newProduct.variationImage = firstImage;
             }
         }
-
         const updatedProducts = [...prooducts, newProduct];
         setProoducts(updatedProducts);
-
-        // Lưu dữ liệu vào localStorage
         localStorage.setItem('products', JSON.stringify(updatedProducts));
-
-        // Hiển thị thông báo thành công
         alert('Thêm sản phẩm vào giỏ hàng thành công!');
     };
 
     const handleReset = () => {
         setProoducts([]);
-
         // Xóa dữ liệu từ localStorage
         localStorage.removeItem('products');
     };
@@ -141,6 +127,36 @@ const Details = () => {
         return prooducts.some((product) => product.variationImage === image);
     };
 
+    // Tạo silder con
+    // const [currentSlide, setCurrentSlide] = useState(0);
+    // const numSlidesToShow = 5;
+    // const lastSlide = item.item_basic.images.length - numSlidesToShow;
+    // const handleNextSlide = () => {
+    //     if (currentSlide < lastSlide) {
+    //         setCurrentSlide(currentSlide + 1);
+    //     }
+    // };
+    // const handlePrevSlide = () => {
+    //     if (currentSlide > 0) {
+    //         setCurrentSlide(currentSlide - 1);
+    //     }
+    // };
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const numSlidesToShow = 5; // Số lượng ảnh hiển thị ban đầu
+
+    // Hàm xử lý khi bấm nút chuyển đến phải
+    const handleNextSlide = () => {
+        if (currentSlide + numSlidesToShow < item.item_basic.images.length) {
+            setCurrentSlide(currentSlide + 1);
+        }
+    };
+
+    // Hàm xử lý khi bấm nút chuyển đến trái
+    const handlePrevSlide = () => {
+        if (currentSlide > 0) {
+            setCurrentSlide(currentSlide - 1);
+        }
+    };
 
     return (
         <>
@@ -159,9 +175,9 @@ const Details = () => {
                         </div>
                         <div style={{ flex: '1' }}></div>
                         <ul className='flex2'>
-                            <li className='space space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><NotificationsNoneIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Thông Báo</div></li>
-                            <Link to='' className='space space1 space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><HelpOutlineIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Hỗ Trợ</div></Link>
-                            <span className='space space1 space2' style={{ color: '#fff', display: 'flex',paddingTop:'6px' }}><LanguageIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Tiếng việt</div></span>
+                            <li className='space space2' style={{ color: '#fff', display: 'flex', paddingTop: '6px' }}><NotificationsNoneIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Thông Báo</div></li>
+                            <Link to='' className='space space1 space2' style={{ color: '#fff', display: 'flex', paddingTop: '6px' }}><HelpOutlineIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Hỗ Trợ</div></Link>
+                            <span className='space space1 space2' style={{ color: '#fff', display: 'flex', paddingTop: '6px' }}><LanguageIcon style={{ fontSize: '1.1rem' }} /><div style={{ marginLeft: '.3125rem' }}>Tiếng việt</div></span>
                             <Link to='/signup' className='space space1 space2' style={{ color: '#fff' }}>Đăng Ký</Link>
                             <Link to='/login' className='space space1 space2' style={{ color: '#fff' }}>Đăng Nhập</Link>
 
@@ -292,16 +308,42 @@ const Details = () => {
                                         </div>
                                         {/* Phần slide con  */}
                                         <div className='details-img2'>
-
+                                            {item.item_basic.images.map((image, index) => {
+                                                if (index >= currentSlide && index < currentSlide + numSlidesToShow) {
+                                                    return (
+                                                        <div className='details-img2-1'>
+                                                            <div className='details-img2-1-1'>
+                                                                <div className='details-img2-1-1-1'>
+                                                                    <picture key={index}>
+                                                                        <img className='details-img2-1-1-1-1' src={`https://down-vn.img.susercontent.com/file/${image}`} alt="" />
+                                                                    </picture>
+                                                                </div>
+                                                            </div>
+                                                        </div>);
+                                                }
+                                                return null;
+                                            })}
+                                            <button onClick={handlePrevSlide} className='details-img2-2'>
+                                                <svg enableBackground="new 0 0 13 20" viewBox="0 0 13 20" x="0" y="0" className="details-img2-2-1">
+                                                    <polygon points="4.2 10 12.1 2.1 10 -.1 1 8.9 -.1 10 1 11 10 20 12.1 17.9"></polygon>
+                                                </svg>
+                                            </button>
+                                            <button onClick={handleNextSlide} className='details-img2-3'>
+                                                <svg enableBackground="new 0 0 13 21" viewBox="0 0 13 21" x="0" y="0" className="details-img2-3-1">
+                                                    <polygon points="11.1 9.9 2.1 .9 -.1 3.1 7.9 11 -.1 18.9 2.1 21 11.1 12 12.1 11"></polygon>
+                                                </svg>
+                                            </button>
                                         </div>
+                                        {/* Hết phần slide con */}
+
                                     </div>
                                     <div className='details-like'>
                                         <div className='details-share'>
                                             <div style={{ fontSize: '16px', color: '#222' }}>Chia sẻ:</div>
-                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#4489ee', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><GitHubIcon style={{ color: '#fff' }} /></button>
-                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#365d7a', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><FacebookIcon style={{ color: '#fff' }} /></button>
-                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: 'red', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><PinterestIcon style={{ color: '#fff' }} /></button>
-                                            <button style={{ border: 'transparent', marginLeft: '5px', backgroundColor: '#4489ee', position: 'relative', width: '30px', height: '30px', borderRadius: '50%' }}><TwitterIcon style={{ color: '#fff' }} /></button>
+                                            <button className="sprite-product-sharing-M" aria-label="Share on Messenger"></button>
+                                            <button className="sprite-product-sharing-F" aria-label="Share on Facebook"></button>
+                                            <button className="sprite-product-sharing-P" aria-label="Share on Pinterest"></button>
+                                            <button className="sprite-product-sharing-T" aria-label="Share on Twitter"></button>
                                         </div>
                                         <div className='details-love'>
                                             <button className='details-love1' >
@@ -321,7 +363,7 @@ const Details = () => {
                                             <button className='details-pro-content2-button2' style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                                                 <div className='details-pro-content2-button2-1'>{item.item_basic.item_rating.rating_star.toFixed(1)}</div>
                                                 <div className='details-pro-content2-button2-2' style={{ color: '#ee4d2d', marginTop: '-6px' }}>
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-star-fill" viewBox="0 0 16 16">
                                                         <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                                                     </svg>
                                                 </div>
@@ -427,10 +469,6 @@ const Details = () => {
 
                 </div>
             </div>
-
-
-
-
             {/* Footer */}
             <div className='footer' role='contentinfo'>
                 {/* Shopee gì cũng có */}
